@@ -1,10 +1,10 @@
 # Essentials of Applied Data Analysis - Stata Laboratories, Handouts and Activities
 
-Welcome to Essentials of Applied Data Analysis course materials repository at VIII IPSA-USP Summer School on Methods and Concepts in Political Science and International Relations, 2017!
+Welcome to Essentials of Applied Data Analysis course materials repository at IX IPSA-USP Summer School on Methods and Concepts in Political Science and International Relations, 2018!
 
 ##  Schedule
 
-From January 23, 2017 to  January 27, 2017. The Summer School detailed schedule can be found [here](http://summerschool.fflch.usp.br/schedule/detailed-schedule).
+From January 8, 2018 to  January 14, 2014. The Summer School detailed schedule can be found [here](http://summerschool.fflch.usp.br/schedule/detailed-schedule).
 
 ##  What will I find here?
 
@@ -12,7 +12,8 @@ All of the course materials, except for the readings, can be found in this page.
 
 ##  Syllabus
 
-Jan-04-2017 version of the [Syllabus](https://github.com/leobarone/IPSA_USP_EADA_2017/blob/master/Syllabus/syllabus.pdf).
+- Jan-01-2018 version of the [Syllabus](https://github.com/leobarone/IPSA_USP_EADA_2017/blob/master/Syllabus/syllabus.pdf).
+- 2017 [Syllabus](https://github.com/leobarone/IPSA_USP_EADA_2017/blob/master/Syllabus/syllabus.pdf) in case you prefer to follow Ross' book.
 
 ##  Readings
 
@@ -21,13 +22,14 @@ Please, login at the [course page](http://ipsa-usp.com/users/login) to access th
 The two books I use most and recommend reading for this course are:
 
 - Moore, W. H., & Siegel, D. A. (2013). A Mathematics Course for Political and Social Research. Princeton University Press.
+- Imai, Kosuke. Quantitative Social Science: an Introductory Approach.
 - Ross, S. M. (2010). Introductory Statistics. Academic Press.
 
 ## Handouts
 
 Author: [Leonardo Sangali Barone](leonardo.barone@usp.br)
 
-In the 2017 edition of the course I decided we will follow handouts during class instead of presentations. I hope that the handouts together became a nice reference material during and after the course.
+During the morning lectures we will follow handouts during class instead of presentations. I find presentantions hard to follow (and boring). Handouts, on the other hand, gather all the relevant information and can be completed with personal annotations during lectures. We will have them printed to you every morning. It has bI hope that the handouts together became a nice reference material during and after the course. 
 
 All of the handouts where built inspired on the course readings, in particular Ross' and Siegel and Moore's books, both not cited properly in the material.
 
@@ -60,9 +62,9 @@ Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and [Patrick Silva](l
 
 ### Instructions and Objective
 
-The following laboratories were prepared as activies for the Essentials of Applied Data Analysis course at IPSA-USP Summer School 2017. The main goal is to prepare you to learn the basics of data management and analysis using Stata, which is one of the most popular statistical packages in political science and economics.
+The following laboratories were prepared as activies for the Essentials of Applied Data Analysis course at IPSA-USP Summer School 2018. The main goal is to prepare you to learn the basics of data management and analysis using Stata, which is one of the most popular statistical packages in political science and economics.
 
-The idea is that you learn by yourself, with my, as well as Victor's, help and support. In my experience, when students learn by doing -- and not by following me on the board -- and have a reference material to go back to whenever they want (this labs will be online for indefinite time), they learn a lot more.
+The idea is that you learn by yourself, with my, as well as Flávios's, help and support. In my experience, when students learn by doing -- and not by following me on the board -- and have a reference material to go back to whenever they want (this labs will be online for indefinite time), they learn a lot more.
 
 Start in sequence by clicking in the links bellow. We do have a daily goal for the laboratories. However, it is very, very important that you don't rush. Better learn well a part of the material than learn less by trying to cover everything too fast. Even though the module lasts for only one week, you can finish it whenever you want and there will be no assessment of your skill at the end of the course.
 
