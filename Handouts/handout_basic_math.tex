@@ -10,8 +10,8 @@
 
 
 \title{\textbf{Esssentials of Applied Data Analysis\\
-				IPSA-USP Summer School 2017}\newline\\
-				The Basics of Set Theory}
+				IPSA-USP Summer School 2018}\newline\\
+				Basic Mathematics Review}
 
 \author{Leonardo Sangali Barone\\ \href{leonardo.barone@usp.br}{leonardo.barone@usp.br}}
 \date{jan/18}
@@ -24,67 +24,76 @@
 
 Basic notions of algebra, notation and functions.
 
-\subsection*{Operations}
+\subsection*{Basic Operations}
 
-\begin{tabular}{lll}
-	$Notation$ & Natural numbers & Examples\\
+\begin{tabular}{cll}
+	Notation & Natural numbers & Examples\\
+	\hline
+	\hline
 	$+$ & Addition & $40 + 2 = 42$\\
 	$-$ & Subtraction & $44 - 2 = 42$\\
-	$*$ & Multiplication & $6 * 7 = 42$\\
-	$/$ & Rational numbers & $(..., \frac{-42/13}, 1, \frac{-1/2}, 0, \frac{1/2}, \frac{17/13), \frac{a/b} \forall a, b \in \mathbb{Z}...)$) & all \mathbb{N} are \mathbb{Z}\\
-	51 & 52 & 53\\
-	61 & 62 & 63\\
-	71 & 72 & 73\\
-	81 & 82 & 83\\
+	$\ast or \times$ & Multiplication & $6 * 7 = 42$\\
+	$\div$ & Division & $42 \div 7 = 6$\\
+	$x^a$ & $x$ to the power of $a$ & $5^2 = 25$; $10^4 = 10.000$\\
+	$\sqrt[n]{x}$ & \emph{nth} of $x$ & $\sqrt[2]{25} = 5$; $\sqrt[4]{10.000} = 10$\\
+\hline
+\end{tabular}
+\newline\\
+
+\subsection*{Summation and Product}
+
+Summation: $\sum^n_{i=1}x_i = x_1 + x_2 + ... + x_n$
+
+Example:
+\begin{tabular}{cc}
+
+\begin{tabular}{cc}
+	$i$ & $x_i$\\
+	\hline
+	\hline
+	1 & 10\\
+	2 & 15\\
+	3 & 9\\
+	4 & 2\\
+	5 & 6\\
+\end{tabular} & $\sum^5_{i=1}x_i = x_1 + x_2 + x_3 + x_4 + x_5 = 10 + 15 + 9 + 2 + 6 = 42$
+
+\end{tabular}
+\newline\\
+
+Product: $\sum^n_{i=1}x_i = x_1 \times x_2 \times ... \times x_n$
+
+Example:
+\begin{tabular}{cc}
+\begin{tabular}{cc}
+	$i$ & $x_i$\\
+	\hline
+	\hline
+	1 & 10\\
+	2 & 15\\
+	3 & 9\\
+	4 & 2\\
+	5 & 6\\
+\end{tabular} & $\sum^5_{i=1}x_i = x_1 \times x_2 \times x_3 \times x_4 \times x_5 = 10 \times 15 \times 9 \times 2 \times 6 = 16200$
 \end{tabular}
 
+\subsection*{Arithmetic Properties}
 
+Associative:
+\[(a + b) + c = a + (b + c)\]
 
-\subsection*{Common Sets}
+Commutative:
+\[a + b = b + a\]
 
-\begin{tabular}{lll}
-	$Notation$ & Natural numbers & Examples & How it relate to other sets\\
-	$\mathbb{N}$ & Natural numbers & $(0, 1, 2, ...)$ & \\
-	$\mathbb{Z}$ & Integers & $(..., -2, -1, 0, 1, 2, ...)$ & all \mathbb{N} are \mathbb{Z}\\
-	$\mathbb{Q}$ & Rational numbers & $(..., \frac{-42/13}, 1, \frac{-1/2}, 0, \frac{1/2}, \frac{17/13), \frac{a/b} \forall a, b \in \mathbb{Z}...)$) & all \mathbb{N} are \mathbb{Z}\\
-	51 & 52 & 53\\
-	61 & 62 & 63\\
-	71 & 72 & 73\\
-	81 & 82 & 83\\
-\end{tabular}
+Distributive: 
+\[a (b + c) = ab + ac\]
 
+Identities:
+\[x + 0 = x\]
+\[x \times 1 = x\]
 
-\subsection*{Set Theory - operations}
-
-	\begin{itemize}
-		\item $A \cup B$: union of $A$ and $B$.
-		\begin{itemize}
-			\item $p \in (A \cup B$): p is an element of $A$ \textbf{OR} $B$.
-		\end{itemize}
-		\item $A \cap B$: intersection of $A$ an $B$.
-		\begin{itemize}
-			\item $p \in (A \cup B$): p is an element of $A$ \textbf{AND} $B$.
-		\end{itemize}
-		\item If $A \cap B$ is equal to $\emptyset$, then A and B are \textbf{disjoint} sets.
-		\item $A^c$ ($A'$, \textasciitilde$A$ or simply \emph{not A}) is the set of all elements that does not belong to $A$. $A^c$ is the complement of $A$. 
-
-	\end{itemize}
-
-\subsection*{Venn Diagrams}
- We can represent sets with diagrams. These are called ``Venn Diagrams''. See Figure~\ref{f1} and locate the following sets as a quick exercise:\\
-
-\begin{tabular}{llll}
-	1) $A \cup B$ & 5) $(A \cup B) \cup C$ & 9) $A^c$ & 13) $((A \cap B) \cap C)^c$\\
-	2) $A \cap B$ & 6) $(A \cap B) \cap C$ & 10) $(A \cap B)^c$ & 14) $((A \cup B) \cap C)^c$\\
-	3) $A \cup C$ & 7) $(A \cup B) \cap C$ & 11) $(A \cup C)^c$ &\\
-	4) $A \cap C$ & 8) $(A \cap B) \cup C$ & 12) $((A \cup B) \cup C)^c$ &\\
-\end{tabular}
-
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.40]{venn.png}
-\caption{Venn Diagrams}
-\label{f1}
-\end{figure}
+Inverse:
+\[(-x) + x = 0\]
+\[x^{-1} \times x = \left(\frac{1}{x}\right) \times x = 1\]
 
 \end{document}

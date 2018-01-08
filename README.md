@@ -39,6 +39,7 @@ Also, expect me to edit the handouts during the course and the days after it end
 
 At the end of the course, I will combine all of the handouts in a single document and make it available.
 
+- [Basic Math Review](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_basic_math.pdf)
 - [Set Theory](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_set_theory.pdf)
 - [Probability rules - Axioms and Theorems summary](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_probability_axioms_theorems.pdf)
 - [Probability rules - Single Events](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_probability_single.pdf)
