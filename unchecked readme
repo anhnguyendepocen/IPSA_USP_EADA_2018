@@ -1,0 +1,23 @@
+- [Laboratory 7 - Table of summary statistics](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_7.md)
+- [Laboratory 8 - Value labels](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_8.md)
+- [Laboratory 9 - Comparison between groups and Box-plot graphs](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_9.md)
+- [Laboratory 10 - Generating new variables and replacing values](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_10.md)
+- [Laboratory 11 - Two way graphs and correlation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_11.md)
+- [Laboratory 12 - Generating new variables and calculating functions of variables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_12.md)
+- [Laboratory 13 - Confidence intervals and hypothesis test](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_13.md)
+
+
+## Activities and Exercises
+- [Activity 1 - The basics of probability and Câmara dos Deputados](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/activity_1.md)
+- [Textbook Exercise 1 - The basics of probability](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/textbook_exercises1.md)
+- [Activity 2 - Frequency and Two-way tables with Fake data](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/activity_2md)
+- [Activity 3 - Variance "by hand" - pdf explanation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/activity_3.pdf)
+- [Activity 3 - Variance "by hand" - Excel Example](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/fake_data_variance_example.xlsx)
+
+
+## Code and Miscellania
+
+- [Stata Coin Simulation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Do_files/coin_simulation.do)
+- [R code to build of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/simulated_dataset.R)
+- [Data of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_data.csv)
+- [Students data (Rogue one, sum of birthdate, etc)](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/students_data.csv)
