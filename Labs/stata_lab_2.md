@@ -1,10 +1,10 @@
 # Laboratory 2 - Distributions: frequency tables, histograms and densities
 
-Authors: [Leonardo Sangali Barone] (leonardo.barone@usp.br) and [Patrick Silva] (leonardo.barone@usp.br)
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
-In this laboratory we are going to learn the basics of data description. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2011 Latinobarometer.
+In this laboratory we are going to learn the basics of data description. We will produce frequency tables, histograms and densities. We will use 3 different datasets, the 2013 Growth Academic Performance Index (API) Data File, 2011 Latinobarometer and the Labor Market Field Experiment dataset. Download the datasets from the [course repository](https://github.com/leobarone/IPSA_USP_EADA_2018#laboratories) before moving on.
 
 ## Describe the data and get familiarized
 
@@ -54,13 +54,13 @@ Take a minute to undertand the help file.
 
 Great! Let's move forward
 
-## Frequency Tables - Exercise
+## Frequency Tables - Exercise 1
 
 It's time for you to work by yourselves.
 
-Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Victor are here to help you. Ask questions!
+Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Flávio are here to help you. Ask questions!
 
-Download the 2011 Latinobarometer dictionary from the course materials. Get used to it by examining the variables on the dataset and by reading  the dicitionary
+Download the 2011 Latinobarometer dictionary from the course materials. Get used to it by examining the variables on the dataset and by reading the dicitionary
 
 a) Choose five categorical or ordinal variables at the Latinobarometer dataset. Try to choose variables that you believe that are related to each other. In the future we are going to formulate hypothesis on how these variables might be connected.
 
@@ -68,22 +68,29 @@ b) Make one table for each of the variables and analyse the results.
 
 c) Think (just think, but don't do it) if you would like to make some changes in those variables by reorganizing the variables. Try (mentally, not in Stata) to reduce the number of categories in the variables you picked. Takes notes, because we are going to learn how to do it in the near future.
 
-d) Take a look at P76ST. Respondents are asked has self-positioni themselves on one left-right ideological scale, which ranges from 0 (left) to 10 (right). Make a frequency table of this variable. As you will notice from the data set, there were a fairly number of respondents who did not wish to rank themselves on this question.
+d) Take a look at P76ST. Respondents are asked has self-position themselves on one left-right ideological scale, which ranges from 0 (left) to 10 (right). Make a frequency table of this variable. As you will notice from the data set, there were a fairly number of respondents who did not wish to rank themselves on this question.
 
 e) What type of variable is this one (continuous, discrete, ordinal or nominal)? Please justify your answer.
 
+## Frequency Tables - Exercise 2
+
+Open now the Labor Markert Fied Experiment dataset.
+
+a) Locate 4 variables: sex, race, call and city. Make one table for each of these variables and analyse the results.
+
+b) Think about how these 4 variables are related to the design of the experiment and take notes. We will go back to them to replicate part od the published paper.
+
 ## Histograms and densities
 
-Ordinal and categorical data are best represented by tables. You can plot them, but usually a simple frequency table is sufficient to observe the distribution of the data. The same is not true for continuous (or "quasi-continuous" variables).
+Ordinal and categorical data are best represented by tables. You can plot them, but usually a simple frequency table is sufficient to observe the distribution of the data. The same is not true for continuous (or "quasi-continuous" variables, aka integers).
 
 It is ok to do a table with the ideological scale, as you just did in your exercise. But what happens if we do a frequency table with the age of the respondents? Note: "edad" means "age" in Spanish.
-
 
 ```
 tabulate edad
 ```
 
-Not very useful, right. Let's do something even worse: let's tabulete the inicial time of the interview for each respondent
+Not very useful, right? Let's do something even worse: let's tabulate the inicial time of the interview for each respondent
 
 ```
 tabulate ini
@@ -91,7 +98,7 @@ tabulate ini
 
 (Use the "Break" button to stop -- sorry for the trick)
 
-When we are dealing with truly continuous variable, it can assume so many unique values that we cannot represent the it properly in a table. We would need to recode the variable to be able to tabulate it. So, instead of using a table to represent it, we can use a graph. Histograms and density graphs are extremely useful in these situations. Let's look at the histogram of age:
+When we are dealing with truly continuous variable, it can assume so many unique values that we cannot represent the it properly in a table. The count for each category (row) will be one or a small number. We would need to recode the variable to be able to tabulate it. So, instead of using a table to represent it, we can use a graph. Histograms and density graphs are extremely useful in these situations. Let's look at the histogram of age:
 
 ```
 histogram edad
@@ -113,11 +120,11 @@ Easy, right?
 
 ## Histograms and densities - Exercise
 
-Your turn. Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Victor are here to help you. Ask questions!
+Your turn. Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Flávio are here to help you. Ask questions!
 
 As you may have notice by now, the Latinobarometer is full of discrete variables and the California School Performance dataset full of continuous variables. Use the dictionary to understand the variables.
 
-a) Go back to California Department of Education dataset. (Do you remember how to do it?) Observe the distribuion of the "api13" variables (api13, aa_api13, hi_api13,  wh_api13 and sd_api13), which are the 2013 test performance for different sets of students.
+a) Go back to California Department of Education dataset. (Do you remember how to do it?) Observe the distribuion of the "api13" variables (api13, aa_api13, hi_api13, wh_api13 and sd_api13), which are the 2013 test performance for different sets of students.
 
 b) Make histogram and densities for these variables.
 

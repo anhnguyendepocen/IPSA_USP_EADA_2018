@@ -1,69 +1,61 @@
-# Laboratory 9 - Two way graphs and correlation
+# Laboratory 7 - Comparison between groups and Box-plot graphs
 
-We are going to learn the basics of how to manage variables.We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2011 Latinobarometer.
+## Objective
 
-## Correlation
+In this quick lab we are going to learn how to build a box-plot in Stata. We will use the 2013 Growth Academic Performance Index (API) Data File in this lab.
 
-In class, we explored correlation and observed how to represent the joint distribution of two continuous variables. Let's pratice on Stata. We will use the California Department of Education dataset.
+## Box-plot
 
-First, let's look at the individual distribuion of the variables we are going to work with: api13, api12, aa_api13, hi_api13 and wh_api13.
+Please, open the California Deparment of Education Dataset. A box-plot graph is one of the most useful graphs that you can learn to do. It presents in a very elegant way our variable distributrion and some of the measures of position (median and percentiles). Before starting, a warning note: box-plot are more useful when we want to display the distribution of a continuous variable. They are not so useful when our variable is a dichotomous or ordinal variable. Let's start!
 
-```
-kdensity api13
-```
-
-Can you repeat ir for the other variables.
-
-Just by looking at the variables individually, we know nothing about their joint distribuition.
-
-The first clue we can have about joint distributions is the correlation.
+The command in Stata to build a box-plot is "graph box". Let's use it to our variable api13
 
 ```
-corr api12 api13
+graph box api13
 ```
 
-Remember that correlation is always a number between -1 and 1. Nice, isn't it? Try to interpret this correlation, considering that api12 is the performance of the students in 2012 and api13 is the performance if the students in 2013.
-
-If you want to look at more than one correlation at a time, you can add more variables to the list
-
-```
-corr api13 api12 aa_api13 hi_api13 wh_api13
-```
-
-Tricky question: why only the lower part of the table is filled?
-
-## Correlation - Do it yourself
-
-a) Use the corr command to find the 3 variables in the dataset that are highly correlated with api13 BESIDES the "api" variables.
-
-b) Use the corr command to find the 2 variables in the dataset that are not or has low correlation with api13 BESIDES the "api" variables.
-
-## Two-way graphs
-
-Let's see how we plot the joint distribution of two variables, api12 and api13:
+Ugly graph, but very informative. The line in the middle of the box is the median of our variable. It means that half of our observations are less than, aproximally, 793 and half are larger this value. The box itself contains 50%
+of our observations. Therefore, the upper hinge of the box represents the third quartile, and the bottom hinge of the box represents the first quartile. The other lines show the upper and the bottom limits of the distribution. But, it doesn't mean that all of observations are between the lines shown in the graph. Box-plots also show observations that are considered outliers. That is, observations that do not fit well in the distribution. There are some formulas available to define what is a outlier. We can check how Stata defines outliers in Stata Manual. Also, in the Stata manual you will find a very good explanation (with figures) of how to interpret box-plots. To see this information, type:
 
 ```
-twoway scatter (api13 api12)
+help graph box 
 ```
 
-Nice, isn't it? A great virtue of the twoway command is that we can overlay different graphs. In the graph above, we choose just to represent a scatterplot. In the graph below we will show both the scatter plot AND a linear fit that represent the relationship between the two variables
+And click on the name [R] graph box. 
+
+Now, that we know how to do a box-plot and to find information about it. Let's
+produce some nice graphs.
+
+One of the best uses of box-plots is to compare distributions. For instance,
+if we want to compare the distribution of api13 and api12 we can do a box-plot for 
+both variables:
 
 ```
-twoway (scatter api13 api12) (lfit api13 api12) 
+graph box api13 api12
 ```
 
-The linear fit is the regression line of api13 by api12. We will come back to this in the near future.
-
-Finally, in the same way we can look at a couple of correlations at the same time, we can produce a matrix with scatter plots for each pair of variables.
+It is also possible to use box-plots to compare distribution of one or more variables among groups. For instance, we many want to compare the distribution of api13 among schools in which there are not african-american students and schools in which there are african-american students. Our first step is to recode our variable aa_num into two categories. 
 
 ```
-graph matrix api13 api12 aa_api13 hi_api13 wh_api13
+recode aa_num (0=0) (0/max=1), gen(aa_presence) 
 ```
 
-Very cool! You can use this matrix do explore the relationship between the pairs of variables in the dataset, pair by pair.
+Now, that we have our new variable (aa_presence that stands for African-American Presence), we can run the command graph box with the option by() and produce our box-plot:
 
-## Two-way graphs - Your turn
+```
+graph box api13, by(aa_presence)
+```
 
-a) Make two-way graphs for the variables you found out in the last exercise. Your graphs should include a linear fit. Compare the variables that correlate high with api13 with the variables thatcorrelate low with api13.
+Now, let's compare api13 and api12 between groups:
 
-b) Use the graph matrix to explore the relationship of the variables you choose amog each other (not with api13 anymore). Are they correlated with each other? What would you think would be implications of a high correlation among them?
+```
+graph box api13 api12, by(aa_presence)
+```
+
+Great, isn't it?
+
+## Box-plot - Exercise
+
+a) Open the California Department of Education dataset. Let's say, now, we want to observe the performance of different racial groups. Do a box-plot to the variables api13, aa_api13, hi_api13, wh_api13 and sd_api13. What do you observe? How are the distributions? Are they similar?
+
+b) Let's use box-plots to compare between groups. We want to compare the distributions between different levels of the variable Average Parent Education Level.  Recode the variable into two categories and build the box-plots. 

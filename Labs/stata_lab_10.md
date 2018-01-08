@@ -1,124 +1,103 @@
-# Laboratory 10 - Generating new variables and calculating functions of variables
+# Laboratory 8 - Generating new variables and replacing values
 
 ## Objective
 
-We are going to learn the basics of how to manage variables. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2011 Latinobarometer.
+We are going to learn two new commands in Stata: generate and replace. The first one is used to create new variables in our dataset and the second and is used to substitute (replace) values in our dataset. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File.
 
-## Mean and variance
+## Generate
 
-In a dataset where all of the observations have the same weight, it's is quite straightforward to calculate the sumation of a variable useing the tabstat command. For example:
+Please, open the California Deparment of Education Dataset Let's start with generate. When we are working with a new dataset we usually we want to generate a new variable that suits our problems. This new variable can be a function of our variables, a variable that contains only missing values, or a copy of other variables.
 
-```
-tabstat api13, stat(sum)
-```
-
-The sample mean is the sum of the variable divided by the number of observations. With the "summarize" command, we can discover the number of non-missing observations:
+If we want to generate a variable with missing values, we can do the following:
 
 ```
-summarize api13
+gen missing = .
 ```
 
-The sample mean is (as you just saw with the "summarize") command is:
+Where "missing" is the name of our new variable, and "." represents missing values.
+
+If we want to generate a copy of our original variable, we type:
 
 ```
-display  7256222/9258 
+gen copy_api13 = api13
 ```
 
-Easy, right? Now, let's calculate the variance and the standard deviation of api13. First, we need to create a new variable wich is the distance to the mean of each value of api13. We can call it d_api13:
+This command will produce a perfect copy of our original variable. It can be very useful when we want to perform some transformation in our variable and preserve the original one. 
+
+We can also generate variables that are the product of some expression. For instance, in our dataset, we have variables on the percentage of parents that have different educational degrees (not_hsg, hsg, some_col, col_grad, and grad_sch). We may be interested in check if the sum those variables is equal to 100%. To do it, we can use the following command line: 
 
 ```
-generate d_api13 = api13 - 783.77857
+gen check_education = not_hsg + hsg+some_col + col_grad + grad_sch
 ```
 
-Did you notice the warning on missings? A variable derived from another always keep the missings values. If you are curious, open the data matrix and check there is a new collum at the end of it. As we discussed, the sum of the distances is zero. We can check that using the "tabstat" command: 
+Now, let use codebook to observe our new variable:
 
 ```
-tabstat api13, stat(sum)
+codebook check_education
 ```
 
-It is not zero in this case!!! Why? Because of the decimals, which make  calculations imprecise. Still, the number is very, very close to zero  considering this variables is measured can assume values from 0 to 1000.
+Ops! We discovered that our dataset has mistakes! In this case, we can't do
+anything about it because we don't have the original data. But, it is good to now it,
+since now we can inform our reader about our dataset problems
 
-Good. Now we can square these distances. Let's store it into a new variable called d2_api13:
+## Replace
 
-```
-generate d2_api13 = d_api13 d_api13
-```
+The command replace is similar to recode, but there are some important differences. First, if we use replace to recode a variable, we can't preserve our original variable. The only way to do it is by using "generate" first and creating a copy of our variable. The second, and more interesting one, is that with replace we can recode a variable using one or more variable as a condition. Let's start with the simple recodification.
 
-Now, we can sum these squared distances and divide by the number of valid observations to get the variance of api13:
-
-```
-tabstat d2_api13, stat(sum)
-```
-
-Bizzare? Yes, because it is in scientific notation. 9.96e+07 means 9.96 times. We can use the "format" option to get it right. "11.2f" means we want to show 11 numbers before decimals and 2 decimals.
+We want to recode the variable api12, but as replace doesn't have the option to preserve our original variable, let's start by generating a copy of our original variable:
 
 ```
-tabstat d2_api13, stat(sum) format(%11.0g)
+gen copy_api12 = api12
 ```
 
-Now, calculate the variance:
+Let's look our original variable and it's copy:
 
 ```
-display 99622957.01 / 9258
+summarize api12 copy_api12
 ```
 
-And the standard deviation -- sqrt means "square root":
+So, they are equal. Now, we can recode our variable.
 
 ```
-display sqrt(99622957.01)
+replace copy_api12 = 0 if (copy_api12>=0) & (copy_api12<=500)
+replace copy_api12 = 1 if (copy_api12>500) & (copy_api12<=750)
+replace copy_api12 = 2 if (copy_api12>750) & (copy_api12<=1000)
 ```
 
-We can check with the value calculated by Stata:
+Since we changed our variable content, let't rename it.
 
 ```
-summarize api13
-```
-Close enough, isn't it?
-
-## Mean and variance - Your turn
-
-Do it yourself for the variable that represent parents average education.
-
-## Mean and variance - Your turn, again
- 
-Do you remember what happens with the mean and the variance when we add a constant to a variable?
-
-Your task is to generate 2 new variables, one that is a variable from the dataset plus a constant and the other one that is a variable from the  dataset time a constant and verify the consequences for the meaan and the variance. You can use Stata commands to get the new values of the mean and the variance (which is the square of the standar deviation)
-
-## Covariance and correlation
-
-We can repeat the same procedure as above to generate the covariance and correlation between two variables, for example, api13 and api12. First, we calculate the mean for both:
-
-```
-summarize api13 api12
+rename copy_api12 cat_api12
 ```
 
-Next, we calculate distances from the mean:
+Now, let's observe our new variable.
 
 ```
-generate d_api13 = api13 - 783.77857
-generate d_api12 = api13 - 789.8357
+tabulate cat_api12
 ```
 
-Then we multiply both.
+Let's do something a little bit different know. We want to generate a dichotomous variable in which the value 0 will represent
+schools the percentage of parents that have college and gran school degree is less than 50% and 1 will represent those schools in which at least 50% of the parents have college or gran school degrees.
+
+First, let's generate our new variable. It will contain only missing values.
 
 ```
-generate dd = d_api13 d_api13
+gen educ_schools = .
 ```
 
-Be extremely careful: if there is missing is one variable, the new variable will be also missing.
-
-Finally, we can sum the multiplication of distances and divide by the number of valid observations to get the covariance between the two variables:
+Now, that we have our variable, we can assign values to it. We are going to use the command replace. Let's do it!
 
 ```
-summarize dd
-tabstat dd, stat(sum) format(%11.0g)
-display 99622956.2 / 9258
+replace educ_schools = 0 if (col_grad<50) & (grad_sch<50)
+replace educ_schools = 1 if (col_grad>=50) | (grad_sch>=50)
 ```
 
-If we divid the result again, by both standard deviations, we get the  correlation:
+We can check if we recoded right our variable using the command list. Using list, Stata will list the values of all variable for all observations in our dataset. As we are interested only on three variables. We can specify it, by typing:
 
 ```
-summarize api13 api12 if api12 != .
-display 10760.743 / (102.7223 103.7396)
+list col_grad grad_sch educ_schools
 ```
+
+## Generate and Replace - Exercise
+
+a) Open the California Department of Education dataset. Choose three variables. Generate a copy of them. Recode using replace one of these variables using other variables as criterion of recodification. 

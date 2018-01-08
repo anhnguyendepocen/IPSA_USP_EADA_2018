@@ -1,61 +1,135 @@
-# Laboratory 7 - Comparison between groups and Box-plot graphs
+# Laboratory 5 - Table of summary statistics
 
 ## Objective
 
-In this quick lab we are going to learn how to build a box-plot in Stata. We will use the 2013 Growth Academic Performance Index (API) Data File in this lab.
+We are going to learn the basics of how to manage variables. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2011 Latinobarometer.
 
-## Box-plot
+## Table with summary statistics
 
-Please, open the California Deparment of Education Dataset. A box-plot graph is one of the most useful graphs that you can learn to do. It presents in a very elegant way our variable distributrion and some of the measures of position (median and percentiles). Before starting, a warning note: box-plot are more useful when we want to display the distribution of a continuous variable. They are not so useful when our variable is a dichotomous or ordinal variable. Let's start!
-
-The command in Stata to build a box-plot is "graph box". Let's use it to our variable api13
-
-```
-graph box api13
-```
-
-Ugly graph, but very informative. The line in the middle of the box is the median of our variable. It means that half of our observations are less than, aproximally, 793 and half are larger this value. The box itself contains 50%
-of our observations. Therefore, the upper hinge of the box represents the third quartile, and the bottom hinge of the box represents the first quartile. The other lines show the upper and the bottom limits of the distribution. But, it doesn't mean that all of observations are between the lines shown in the graph. Box-plots also show observations that are considered outliers. That is, observations that do not fit well in the distribution. There are some formulas available to define what is a outlier. We can check how Stata defines outliers in Stata Manual. Also, in the Stata manual you will find a very good explanation (with figures) of how to interpret box-plots. To see this information, type:
+Please, open the California Deparment of Education Dataset. We can very quickly summarize descriptive statistics of a randon variable
+by using the command "tabstat". For example:
 
 ```
-help graph box 
+tabstat api13
 ```
 
-And click on the name [R] graph box. 
-
-Now, that we know how to do a box-plot and to find information about it. Let's
-produce some nice graphs.
-
-One of the best uses of box-plots is to compare distributions. For instance,
-if we want to compare the distribution of api13 and api12 we can do a box-plot for 
-both variables:
+We can do it for more than one variable:
 
 ```
-graph box api13 api12
+tabstat api13 avg_ed meals
 ```
 
-It is also possible to use box-plots to compare distribution of one or more variables among groups. For instance, we many want to compare the distribution of api13 among schools in which there are not african-american students and schools in which there are african-american students. Our first step is to recode our variable aa_num into two categories. 
+And we can get different descriptive statistics of each variable by
+setting the optionals:
 
 ```
-recode aa_num (0=0) (0/max=1), gen(aa_presence) 
+tabstat api13, stat(mean sd min max)
 ```
 
-Now, that we have our new variable (aa_presence that stands for African-American Presence), we can run the command graph box with the option by() and produce our box-plot:
+If we want more than one statistic for more than one variable we can do the following
 
 ```
-graph box api13, by(aa_presence)
-```
-
-Now, let's compare api13 and api12 between groups:
-
-```
-graph box api13 api12, by(aa_presence)
+tabstat api13 avg_ed meals, stat(mean sd  min max)
 ```
 
 Great, isn't it?
 
-## Box-plot - Exercise
+## Table with summary statistics - Exercise
 
-a) Open the California Department of Education dataset. Let's say, now, we want to observe the performance of different racial groups. Do a box-plot to the variables api13, aa_api13, hi_api13, wh_api13 and sd_api13. What do you observe? How are the distributions? Are they similar?
+Compare the performance of african-american, hispanic and white students using the tabstat command. Make hypothesis about the difference of means and observe the results. In the future we will see if those differences are "statistically significant".
 
-b) Let's use box-plots to compare between groups. We want to compare the distributions between different levels of the variable Average Parent Education Level.  Recode the variable into two categories and build the box-plots. 
+## Table with summary statistics - Dummy variables
+
+It doesn't make much sense to use a table of summary statistics for categorical or ordinal variables, since the mean or standard deviation of the numerical codes are meaningless
+
+However, what happens if we take the mean of a binary variable, for example, coded as 0 and 1 (also know as dummy variable)?
+
+Let's test. We will recode the variable "not_hsg", which indicates the percentage of parents who doesn't have a high school degree. Before recoding it into 0 (high number of parents who didn't graduate at high school) and 1 (low number of parents who didn't graduate at high school, hence, more educated), let's exam the variable
+
+```
+summarize not_hsg, detail
+kdensity not_hsg
+```
+
+We are going to use the median as a threshold, but you can choose other values if yoy think there's a better way to distinguish schools using this variable.
+
+```
+recode not_hsg (0/16 = 1 "High") (16/100 = 0 "Low"), gen(parent_ed)
+```
+
+Let's tabulate our new variable:
+
+```
+tabulate parent_ed 
+```
+
+And observe the tabstat command applied to it:
+
+```
+tabstat parent_ed, stat(mean sd)
+```
+
+Take a few minutes to gess what does the mean means (sic). Hint: look at the tabulate command output for that variable.
+
+The mean of a binary variable indicates the proportion of "ones" in that variable. In other words, it indicates the frequency of the category coded was one.
+
+One advantage of working with binary variables is that we can treat them, mathematically speaking, in the same way we treat continous variables. That's because the expected values (mean, variance, etc) are meaningfull.
+
+## Table with summary statistics - Your turn
+
+(You can read this exercise, skip, and go back to it after you stop using the California Department of Education Dataset if you wish)
+
+Go back to the Latinobarometer dataset. Recode your choosen variables into two categories coded as 0 and 1. Explore them using the tabstat command. Save your code and come back to this dataset later.
+
+## Table with summary statistics - Summary by Group
+
+Open the California Department of Education dataset (again). Let's say, now, we want to observe the mean performance of different racial groups BY the parent's education, which is now coded into only two different categories.
+
+We could using the conditional "if" to acomplish the task:
+
+For low education parents:
+
+```
+tabstat aa_api13 hi_api13 wh_api13 if parent_ed == 0, stat(mean sd)
+```
+
+For high education parents: 
+
+```
+tabstat aa_api13 hi_api13 wh_api13 if parent_ed == 1, stat(mean sd)
+```
+
+Not very neat, right?
+
+A better alternative is to use the "by" clause in the tabstat command. Look how it works (for one variable for now)
+
+```
+tabstat aa_api13, by(parent_ed) stat(mean sd)
+```
+
+Cool, right? And very, very powerful. What this tables shows us it that, for african american students, schools (or students on those schools) in which parents are more educated perform, ON AVERAGE, 81 point better then the other schools.
+
+We could do the same for a more boring variable, but that already has 3 categories, which is "charter" (type of school):
+
+```
+tabstat aa_api13, by(charter) stat(mean sd)
+```
+
+Or even by school school county:
+
+```
+tabstat aa_api13, by(cname) stat(mean sd)
+```
+
+Finally, we could do the table for a list of variables. In these cases, the descriptive statistcs are organized in cells (for example, mean on top and standard deviation on the botton of the cell)
+
+```
+tabstat aa_api13 hi_api13 wh_api13, by(parent_ed) stat(mean sd)
+```
+
+## Table with summary statistics - Summary by Group - Now the challenge begins
+
+You are going to work with the two datasets. In the California Department of Education dataset I would like you to recode one of the following variables -- meals, avg_ed or some_col -- into categorical variables and observe test performances of each racial group BY the recoded variable. The recoded variable does not have to be recoded as dummy (because the variable is not being
+summarized). Analyse it. Don't worry if you think it is too challenging now. Ask for help.
+
+After you finish working with this dataset, go to Latinobarometer. Investigate the dummy variables you recoded BY ANY OTHER VARIABLE in the dataset you think is related to the recoded variable. Make hypothesis about the differences in proportions.

@@ -1,103 +1,68 @@
-# Laboratory 8 - Generating new variables and replacing values
+# Laboratory 6 - Value labels
 
 ## Objective
 
-We are going to learn two new commands in Stata: generate and replace. The first one is used to create new variables in our dataset and the second and is used to substitute (replace) values in our dataset. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File.
+For now, we have already learned how to label variables (label var command) and how to rename variables (rename command). Sometimes, we also want to label variable values. In this lab, we are going to learn how to do it in Stata. Although many processes in Stata are straighforward, assigning labels to a value isn't. But, don't worry! It is not hard, it is just not as intuitive as the other commands and that we have learned so far. We will use the 2013 Growth Academic Performance Index (API) Data File in this lab.
 
-## Generate
+## Value labels
 
-Please, open the California Deparment of Education Dataset Let's start with generate. When we are working with a new dataset we usually we want to generate a new variable that suits our problems. This new variable can be a function of our variables, a variable that contains only missing values, or a copy of other variables.
-
-If we want to generate a variable with missing values, we can do the following:
+Open the API dataset. We will assign labels to a new variable that represents different levels of the variable api13. We will use recode to generate our new variable:
 
 ```
-gen missing = .
+recode api13 (0/500=0) (500/750=1) (750/1000=2), gen(catapi13)
 ```
 
-Where "missing" is the name of our new variable, and "." represents missing values.
-
-If we want to generate a copy of our original variable, we type:
+Now that we have our new variable, let's make a frenquency table using the command "tabulate":
 
 ```
-gen copy_api13 = api13
+tabulate catapi13
 ```
 
-This command will produce a perfect copy of our original variable. It can be very useful when we want to perform some transformation in our variable and preserve the original one. 
-
-We can also generate variables that are the product of some expression. For instance, in our dataset, we have variables on the percentage of parents that have different educational degrees (not_hsg, hsg, some_col, col_grad, and grad_sch). We may be interested in check if the sum those variables is equal to 100%. To do it, we can use the following command line: 
+We know what each value in our table represents, but if other people look at our table they would not have any idea about what each value represents. In order to solve this problem, we can assign labels to our variable values. First we have to use the command "label define".
 
 ```
-gen check_education = not_hsg + hsg+some_col + col_grad + grad_sch
+label define catapi13label 0 "Low API (0-500)" 1 "Medium API (500-750)" 2 "High API (750-100)"
 ```
-
-Now, let use codebook to observe our new variable:
-
-```
-codebook check_education
-```
-
-Ops! We discovered that our dataset has mistakes! In this case, we can't do
-anything about it because we don't have the original data. But, it is good to now it,
-since now we can inform our reader about our dataset problems
-
-## Replace
-
-The command replace is similar to recode, but there are some important differences. First, if we use replace to recode a variable, we can't preserve our original variable. The only way to do it is by using "generate" first and creating a copy of our variable. The second, and more interesting one, is that with replace we can recode a variable using one or more variable as a condition. Let's start with the simple recodification.
-
-We want to recode the variable api12, but as replace doesn't have the option to preserve our original variable, let's start by generating a copy of our original variable:
+ 
+With this command line, we created a "shadow variable" (Stata calls it as "label variable"). We are not able to observe directly this variable and it is a little bit different from our other variables. This variable "catapi13label" only contains our labels.
+The numbers outside quotation marks represent our variable values, and the text inside quotation marks are our labels. Note: we have to use quotation marks here. If we don't use them, our command will not work. To assign labels to our values, we match this "shadow variable" to our variable of interest using the command "label values":
 
 ```
-gen copy_api12 = api12
+label values catapi13 catapi13label
 ```
 
-Let's look our original variable and it's copy:
+In this command, the first variable is our variable of interest and the second one is our "label variable". We have to put the variables in this order or it won't work. Now that our variable values have labels, let's do our frequency table again:
 
 ```
-summarize api12 copy_api12
+tabulate catapi13
 ```
 
-So, they are equal. Now, we can recode our variable.
+As we can see, now it is possible for everyone to understand our table.  But, wait! We have done a mistake! Our third label is wrong. We should have typed "1000" not "100". But, don't worry! It is easy to modify a label that  we created. We only have to re-run the command "label define" using the option "modify"
 
 ```
-replace copy_api12 = 0 if (copy_api12>=0) & (copy_api12<=500)
-replace copy_api12 = 1 if (copy_api12>500) & (copy_api12<=750)
-replace copy_api12 = 2 if (copy_api12>750) & (copy_api12<=1000)
+label define catapi13label 2 "High API (750-1000)", modify
 ```
 
-Since we changed our variable content, let't rename it.
+Let's tabulate our variable again:
 
 ```
-rename copy_api12 cat_api12
+tabulate catapi13
 ```
 
-Now, let's observe our new variable.
+Yes! It's working now! So, if we want to modify a label that we assigned to a variable we only have to use the command "label define" again using the option "modify". We don't have to create a new "label variable".
+
+Finally, Stata has a command that list all label variables available in one dataset. It is specially useful when we are working with a dataset created by others. In order to list all label variables, we use the following command:
 
 ```
-tabulate cat_api12
+label dir
 ```
 
-Let's do something a little bit different know. We want to generate a dichotomous variable in which the value 0 will represent
-schools the percentage of parents that have college and gran school degree is less than 50% and 1 will represent those schools in which at least 50% of the parents have college or gran school degrees.
+By using it, Stata will list all label variables. In our case, we only have one variable.
 
-First, let's generate our new variable. It will contain only missing values.
+## Value label - Exercise
 
-```
-gen educ_schools = .
-```
+Your turn. Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Victor are here to help you. Ask questions!
 
-Now, that we have our variable, we can assign values to it. We are going to use the command replace. Let's do it!
+a) Pick one of our datasets. Choose three variables. Recode them and assign labels to their new values. 
 
-```
-replace educ_schools = 0 if (col_grad<50) & (grad_sch<50)
-replace educ_schools = 1 if (col_grad>=50) | (grad_sch>=50)
-```
-
-We can check if we recoded right our variable using the command list. Using list, Stata will list the values of all variable for all observations in our dataset. As we are interested only on three variables. We can specify it, by typing:
-
-```
-list col_grad grad_sch educ_schools
-```
-
-## Generate and Replace - Exercise
-
-a) Open the California Department of Education dataset. Choose three variables. Generate a copy of them. Recode using replace one of these variables using other variables as criterion of recodification. 
+b) Go back to 2011 Latino Barometro dataset. Use the command "label dir" to list all label variables available. Choose two of them and modify them. 

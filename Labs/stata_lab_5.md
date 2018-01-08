@@ -1,135 +1,50 @@
-# Laboratory 5 - Table of summary statistics
+# Laboratory 5 - Logical Operators and if
+
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
-We are going to learn the basics of how to manage variables. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2011 Latinobarometer.
+We are going to learn the basics of two way tables. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 3 different datasets, the 2013 Growth Academic Performance Index (API) Data File, the 2015 Latinobarometer and the Labor Market Field Experiment dataset.
 
-## Table with summary statistics
+## Two-way tables
 
-Please, open the California Deparment of Education Dataset. We can very quickly summarize descriptive statistics of a randon variable
-by using the command "tabstat". For example:
+Let's go back to Latinobarometer data for Brazil (Latinobarometro_2011_eng_BR.dta file).
 
-```
-tabstat api13
-```
+In the first laboratories we have described variables using tables and histograms. We have worked with only one variable at a time. It's is time to move forward and work with two variables at the same time. We will start by building two-way tables with the variables.
 
-We can do it for more than one variable:
+For example, we can take a look at questions P15N (opinion on democracy status) and sex (social class)
 
 ```
-tabstat api13 avg_ed meals
+codebook P15N sex
+tabulate P15N sex
 ```
 
-And we can get different descriptive statistics of each variable by
-setting the optionals:
+Hummmm. Interesting. But is it easy to read? Not really. The problem is that we only have the frequency of the combinantion of categories, but not the relative frequencies. We can check the relative frequencies by using options. Frequencies can be relative to the total number of observations or tho the total in one of the margins (rows or collumns).
+
+Compare the differences (hint: look at where the relative frequencies sum 100)
 
 ```
-tabstat api13, stat(mean sd min max)
+tabulate P15N sex, row
+tabulate P15N sex, col
+tabulate P15N sex, cell
 ```
 
-If we want more than one statistic for more than one variable we can do the following
+Easy, right?
 
-```
-tabstat api13 avg_ed meals, stat(mean sd  min max)
-```
+Breath deeply and answer: in your opinion, are these two variables independent of each other? In other words: Do women and men vary in terms of opinion on the Brazilian democracy? Justify your answer!
 
-Great, isn't it?
+## Two-way tables -- Your turn
 
-## Table with summary statistics - Exercise
+Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Flávio are here to help you. Ask questions!
 
-Compare the performance of african-american, hispanic and white students using the tabstat command. Make hypothesis about the difference of means and observe the results. In the future we will see if those differences are "statistically significant".
+Remember that you recoded some Latinobarometer variables? Great! It's time to use them.
 
-## Table with summary statistics - Dummy variables
+a) Before you move on, be sure these variables are properly recoded. Change the name  of the variables if you think they are not intuitive (like questions codes).
 
-It doesn't make much sense to use a table of summary statistics for categorical or ordinal variables, since the mean or standard deviation of the numerical codes are meaningless
+b) Build 2-way tables with the variables you have recoded. Try to make tables that are, in the first moment, theoretically interesting to you. Make up some hypothesis on how these two variables are related to each other.
 
-However, what happens if we take the mean of a binary variable, for example, coded as 0 and 1 (also know as dummy variable)?
+c) Observe the empirical joint distribuition of the two variables. Are the variables you worked with independent of each other? Justify your answer. 
 
-Let's test. We will recode the variable "not_hsg", which indicates the percentage of parents who doesn't have a high school degree. Before recoding it into 0 (high number of parents who didn't graduate at high school) and 1 (low number of parents who didn't graduate at high school, hence, more educated), let's exam the variable
+d) Recode the variable "ideology" (P76ST) into 2 categories: left and right. Take the decisions you need to recode it properly.
 
-```
-summarize not_hsg, detail
-kdensity not_hsg
-```
-
-We are going to use the median as a threshold, but you can choose other values if yoy think there's a better way to distinguish schools using this variable.
-
-```
-recode not_hsg (0/16 = 1 "High") (16/100 = 0 "Low"), gen(parent_ed)
-```
-
-Let's tabulate our new variable:
-
-```
-tabulate parent_ed 
-```
-
-And observe the tabstat command applied to it:
-
-```
-tabstat parent_ed, stat(mean sd)
-```
-
-Take a few minutes to gess what does the mean means (sic). Hint: look at the tabulate command output for that variable.
-
-The mean of a binary variable indicates the proportion of "ones" in that variable. In other words, it indicates the frequency of the category coded was one.
-
-One advantage of working with binary variables is that we can treat them, mathematically speaking, in the same way we treat continous variables. That's because the expected values (mean, variance, etc) are meaningfull.
-
-## Table with summary statistics - Your turn
-
-(You can read this exercise, skip, and go back to it after you stop using the California Department of Education Dataset if you wish)
-
-Go back to the Latinobarometer dataset. Recode your choosen variables into two categories coded as 0 and 1. Explore them using the tabstat command. Save your code and come back to this dataset later.
-
-## Table with summary statistics - Summary by Group
-
-Open the California Department of Education dataset (again). Let's say, now, we want to observe the mean performance of different racial groups BY the parent's education, which is now coded into only two different categories.
-
-We could using the conditional "if" to acomplish the task:
-
-For low education parents:
-
-```
-tabstat aa_api13 hi_api13 wh_api13 if parent_ed == 0, stat(mean sd)
-```
-
-For high education parents: 
-
-```
-tabstat aa_api13 hi_api13 wh_api13 if parent_ed == 1, stat(mean sd)
-```
-
-Not very neat, right?
-
-A better alternative is to use the "by" clause in the tabstat command. Look how it works (for one variable for now)
-
-```
-tabstat aa_api13, by(parent_ed) stat(mean sd)
-```
-
-Cool, right? And very, very powerful. What this tables shows us it that, for african american students, schools (or students on those schools) in which parents are more educated perform, ON AVERAGE, 81 point better then the other schools.
-
-We could do the same for a more boring variable, but that already has 3 categories, which is "charter" (type of school):
-
-```
-tabstat aa_api13, by(charter) stat(mean sd)
-```
-
-Or even by school school county:
-
-```
-tabstat aa_api13, by(cname) stat(mean sd)
-```
-
-Finally, we could do the table for a list of variables. In these cases, the descriptive statistcs are organized in cells (for example, mean on top and standard deviation on the botton of the cell)
-
-```
-tabstat aa_api13 hi_api13 wh_api13, by(parent_ed) stat(mean sd)
-```
-
-## Table with summary statistics - Summary by Group - Now the challenge begins
-
-You are going to work with the two datasets. In the California Department of Education dataset I would like you to recode one of the following variables -- meals, avg_ed or some_col -- into categorical variables and observe test performances of each racial group BY the recoded variable. The recoded variable does not have to be recoded as dummy (because the variable is not being
-summarized). Analyse it. Don't worry if you think it is too challenging now. Ask for help.
-
-After you finish working with this dataset, go to Latinobarometer. Investigate the dummy variables you recoded BY ANY OTHER VARIABLE in the dataset you think is related to the recoded variable. Make hypothesis about the differences in proportions.
+e) Check if ideology is indepedent of the variables you have chosen for your exercise by building two-way tables.

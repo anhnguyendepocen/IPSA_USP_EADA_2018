@@ -1,10 +1,10 @@
 # Laboratory 3 - Renaming, labeling and recoding variables
 
-Authors: [Leonardo Sangali Barone] (leonardo.barone@usp.br) and [Patrick Silva] (leonardo.barone@usp.br)
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
-We are going to learn the basics of how to manage variables. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2015 Latinobarometer.
+We are going to learn the basics of how to manage variables. We will produce frequency tables, histograms and densities. We will use 3 different datasets, the 2013 Growth Academic Performance Index (API) Data File, 2011 Latinobarometer and the Labor Market Field Experiment dataset. Download the datasets from the [course repository](https://github.com/leobarone/IPSA_USP_EADA_2018#laboratories) before moving on.
 
 ## Renaming variables
 
@@ -22,11 +22,11 @@ Done! But be careful. Stata no longer recognize P76STas a variable. It is absolu
 
 ## Renaming variables - Your turn
 
-Quickly rename all the Latinobarometro variables you have tabulated in the last labotory exercise. Use intuitive names and abbreviations. Stata is case sensitive, so "ideology", "Ideology" or "IDEOLOGY" are dinstiguished from each other. If you are going to use 2 words in the variable name (e.g. "ideology" "recode") separate them with underscore ("_", as in "ideology_recoded") or initiate the second (or even third) word with capital letter ("ideologyRecoded").
+Quickly rename all the Latinobarometro variables from Latinobarometer you have tabulated in the last labotory exercise. Use intuitive names and abbreviations. Stata is case sensitive, so "ideology", "Ideology" or "IDEOLOGY" are dinstiguished from each other. If you are going to use 2 words in the variable name (e.g. "ideology" "recode") separate them with underscore ("\_", as in "ideology_recoded") or initiate the second (or even third) word with capital letter ("ideologyRecoded").
 
 ## Labeling variables
 
-One great virtue of the Latinobarometer dataset is that it comes completely labeled. By label we mean that the variable has a name and a description, the same that you see at the variable windown, and that appears on tables or when you use commands like describe or codebook.
+One virtue of the Latinobarometer dataset is that it comes completely labeled. By label we mean that the variable has a name and a human-readable description, the same that you see at the variable windown, and that appears on tables or when you use commands like describe or codebook.
 
 On the other hand the California Department of Education (API) dataset has no label at all. Go back to this dataset.
 
@@ -47,11 +47,13 @@ describe dname cname valid api13
 
 ## Labeling variables - Your turn
 
-Quickly label 5 variables of your choice in the API dataset. Check the online [dictionary] (http://www.cde.ca.gov/ta/ac/ap/reclayout13g.asp) if necessary.
+Quickly label 5 variables of your choice in the API dataset. Check the online [dictionary](http://www.cde.ca.gov/ta/ac/ap/reclayout13g.asp) if necessary.
+
+When you are done with API dataset, go to the Labor Market Field Experiment and label the variables sex, race, call and city, some of which are already labelled, with your own words.
 
 ## Recoding variables - Continuous Variables
 
-A great part of the task of a data analyst is to prepare variables for the analysis. You already know how to exam them. It is time you transform them by recoding. We will start by recoding a continuous variable into a ordinal variable. not_hsg represents the percentage of parents who didn't graduate at high school by school in the dataset. Let's take a look at it.
+A great part of the task of a data analyst is to prepare variables for the analysis. You already know how to exam them. It is time you transform them by recoding. We will start by recoding a continuous variable into a ordinal variable. "not_hsg" represents the percentage of parents who didn't graduate at high school by school in the dataset. Let's take a look at it.
 
 ```
 summarize not_hsg, detail
@@ -105,7 +107,7 @@ Take a minute to look at the syntax (structure) of the command.
 
 ## Recoding variables - Continuous - Exercise
 
-Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Victor are here to help you. Ask questions!
+Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Flávio are here to help you. Ask questions!
 
 a) label the variables meals and avg_ed.
 b) Observe the distribution of these two variables with graphs.
@@ -115,19 +117,19 @@ c) Recode them into new variables with two categories.
 
 Go back now to Latinobarometer (no, I am not joking or messing with you guys -- we are switching datasets for didactical purposes). We will recode discrete variables now.
 
-If you succeded in your last task, it should be ok by now to recode variable P76ST, as known as ideology. Describe it both with a frequency table and a graph and decide how you will recode it (number of categories). Label the categories and tabulate the result.
+If you succeded in the last task, it should be ok by now to recode variable P76ST, ideology. Describe it both with a frequency table and a graph and decide how you will recode it (number of categories). Label the categories and tabulate the result.
 
 Obs: have you noticed that, by recoding a variable we are always making it more simple and are loosing information (and variation)? Recoding can be also understood as "grouping values/categories".
 
 ## Recoding variables - Discrete
  
-We can recode categorical variables in a very similar way using the  "recode" commmand. Take a look on how we can recode S14, regarding social classes. The variable has 5 categories + DN ("Don't Know") and NA  ("No Answer"). Let's look at the numerical values of the categories
+We can recode categorical variables in a very similar way using the  "recode" commmand. Take a look on how we can recode S14, regarding social classes. The variable has 5 categories + DN ("Don't Know") and NA ("No Answer"). Let's look at the numerical values of the categories
 
 ```
 codebook S14
 ```
 
-Let's regroup the variable. Take a good look at the command and understand it before moving forward.
+Let's regroup this variable. Take a good look at the command and understand it before moving forward.
 
 ```
 recode S14 (-1 = .) (-2 = .) (1 = 1 "High") (2 = 1 "High") (3 = 2 "Medium") (4 = 3 "Low")  (5 = 3 "Low"), gen(social_class)
@@ -149,6 +151,8 @@ tabulate social_class, missing
 
 ## Recoding variables - Discrete - Do it by yourself
 
-Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Victor are here to help you. Ask questions!
+Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Flávio are here to help you. Ask questions!
 
 Remember you had planned to recode some Latinobarometer variables in lab 2 (and took notes)? It is time to do it. Recode at least 3 variables.
+
+VERY IMPORTANT: save in a do-file all the recodings you did. We will use them in the near future.
