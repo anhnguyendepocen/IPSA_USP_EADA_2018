@@ -36,7 +36,16 @@ Let's break the sentence into parts. First, using parenthesis:
 
 "(Sum of the ((squared (deviations from the (mean))) weighted by the probability of occurence))"
 
-From inside to outside, the first "operation" we need to do is (1) calculate the mean (expected value) of the variable. Start by summing the values for all the observations and divide it by the total number of observations. For example, in the case of age:
+From inside to outside, the first "operation" we need to do is:
+
+\begin{enumerate}
+		\item calculate the mean (expected value) of the variable.
+		\item calculate the deviation from the mean for each observation
+		\item square the deviations
+		\item sum the squared deviations
+\end{enumerate}
+
+To calculate the mean (expected value) of the variable, start by summing the values for all the observations and divide it by the total number of observations. For example, in the case of age:
 
 \[E[X] = \frac{x_1 + x_2 + ... + x_{29} + x_{30}}{30} = \frac{37+26+...+32+23}{30} = 34.067\]
 

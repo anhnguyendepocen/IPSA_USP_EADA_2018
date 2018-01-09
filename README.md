@@ -107,10 +107,43 @@ We will use this dataset to replicate published research and learn a little bit 
 - [Laboratory 4 - Logical Operators and if](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_4.md)
 - [Laboratory 5- Two-way tables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_5.md)
 - [Laboratory 6 - Partial replication of Labor Market Field Experiment Paper](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_6.md)
+- [Laboratory 7 - Table of summary statistics](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_7.md)
+- [Laboratory 8 - Value labels](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_8.md)
+- [Laboratory 9 - Comparison between groups and Box-plot graphs](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_9.md)
+- [Laboratory 10 - Generating new variables and replacing values](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_10.md)
+- [Laboratory 11 - Two way graphs and correlation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_11.md)
+- [Laboratory 12 - Generating new variables and calculating functions of variables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_12.md)
+- [Laboratory 13 - Confidence intervals and hypothesis test](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_13.md)
+
+## Exercises and Activities
+
+
+### Textbook Exercises
+
+- [Textbook Exercises - Probability rules](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/textbook_exercises1.md)
+- [Textbook Exercises - Random variables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/textbook_exercises2.md)
+- [Textbook Exercises - Basic inference](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/textbook_exercises3.md)
+
+### Activities
+
+- [Activity 1 - The basics of probability and Câmara dos Deputados](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/activity_1.md)
+- [Activity 2 - Frequency and Two-way tables with Fake data](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/activity_2md)
+- [Activity 3 - Variance "by hand" - pdf explanation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/activity_3.pdf)
+- [Activity 3 - Variance "by hand" - Excel Example](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Activities/fake_data_variance_example.xlsx)
+
+## Code and Miscellania
+
+- [Labor Market Field Experiment Paper](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/Bertrand_Mullainathan_paper)
+- [Fake CVs from Labor Market Discrimination Exercise](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_cvs.pdf)
+- [Fake Politicians from Electoral Discrimination Exercise - 1](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_1.pdf)
+- [Fake Politicians from Electoral Discrimination Exercise - 2](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_2.pdf)
+- [Stata Coin Simulation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/coin_simulation.do)
+- [Data of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_data.csv)
+- [R code to build of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/simulated_dataset.R)
 
 ## Questions, issues and discussions in Github
 
-If you have any question, you can always write to [me](leobarone@gmail.com) or to [Victor](victor.asaraujo@gmail.com). But, there is a nice way to share your questions, open issues or start discussions: use github to open an issue!
+If you have any question, you can always write to [me](leobarone@gmail.com) or to Flávio. But, there is a nice way to share your questions, open issues or start discussions: use github to open an issue!
 
 Just click on "Issues" at the tab menu above, or [here](https://github.com/leobarone/IPSA_USP_EADA_2018/issues), check if it doesn't yet exist (or if there is something very similar), and create your new issue (as in the illustration below)
 

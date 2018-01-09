@@ -1,4 +1,8 @@
-# Laboratory 9 - Two way graphs and correlation
+# Laboratory 11 - Two way graphs and correlation
+
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
+
+## Objective
 
 We are going to learn the basics of how to manage variables.We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2011 Latinobarometer.
 

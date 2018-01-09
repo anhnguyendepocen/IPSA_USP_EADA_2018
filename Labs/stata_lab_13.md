@@ -1,6 +1,6 @@
 # Laboratory 11 - Confidence intervals and hypothesis test
 
-Authors: [Leonardo Sangali Barone] (leonardo.barone@usp.br) and [Patrick Silva] (leonardo.barone@usp.br)
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and [Patrick Silva](leonardo.barone@usp.br)
 
 ## Objective
 

@@ -1,8 +1,10 @@
-# Laboratory 6 - Value labels
+# Laboratory 8 - Value labels
+
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
-For now, we have already learned how to label variables (label var command) and how to rename variables (rename command). Sometimes, we also want to label variable values. In this lab, we are going to learn how to do it in Stata. Although many processes in Stata are straighforward, assigning labels to a value isn't. But, don't worry! It is not hard, it is just not as intuitive as the other commands and that we have learned so far. We will use the 2013 Growth Academic Performance Index (API) Data File in this lab.
+So far, we have already learnt how to label variables (label var command) and how to rename variables (rename command). Sometimes, we also want to label variable values. In this lab, we are going to learn how to do it in Stata. Although many processes in Stata are straighforward, assigning labels to a value isn't. But, don't worry! It is not hard, it is just not as intuitive as the other commands and that we have learned so far. We will use the 2013 Growth Academic Performance Index (API) Data File in this lab.
 
 ## Value labels
 
@@ -61,8 +63,8 @@ By using it, Stata will list all label variables. In our case, we only have one 
 
 ## Value label - Exercise
 
-Your turn. Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Victor are here to help you. Ask questions!
+Your turn. Work in groups of 2 to 4, please! Don’t do it by yourself! Try to figure out how to solve any problems discussing it with your group. Learn by doing (aka learn by making a lot of mistakes). It is ok to cheat and check how the other groups are doing their activity. Just ask them nicely and don’t bother them. Leo and Flávio are here to help you. Ask questions!
 
 a) Pick one of our datasets. Choose three variables. Recode them and assign labels to their new values. 
 
-b) Go back to 2011 Latino Barometro dataset. Use the command "label dir" to list all label variables available. Choose two of them and modify them. 
+b) Go back to 2011 Latinobarometer. Use the command "label dir" to list all label variables available. Choose two of them and modify them. 

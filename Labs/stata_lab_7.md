@@ -1,8 +1,10 @@
-# Laboratory 5 - Table of summary statistics
+# Laboratory 7 - Table of summary statistics
+
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
-We are going to learn the basics of how to manage variables. We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2011 Latinobarometer.
+We are going to learn generate tables with summary statistics. We will use 2 different datasets. We will use 3 different datasets we have been using in our lab sessions.
 
 ## Table with summary statistics
 
@@ -19,8 +21,7 @@ We can do it for more than one variable:
 tabstat api13 avg_ed meals
 ```
 
-And we can get different descriptive statistics of each variable by
-setting the optionals:
+And we can get different descriptive statistics of each variable by setting the optionals:
 
 ```
 tabstat api13, stat(mean sd min max)
@@ -51,7 +52,7 @@ summarize not_hsg, detail
 kdensity not_hsg
 ```
 
-We are going to use the median as a threshold, but you can choose other values if yoy think there's a better way to distinguish schools using this variable.
+We are going to use the median as a threshold, but you can choose other values if you think there's a better way to distinguish schools using this variable.
 
 ```
 recode not_hsg (0/16 = 1 "High") (16/100 = 0 "Low"), gen(parent_ed)

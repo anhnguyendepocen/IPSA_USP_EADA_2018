@@ -49,7 +49,7 @@ But don't be scared! You will get used to not looking at your data and you will 
 Similar to browse, there is the 'edit' command
 
 ```
-browse
+edit
 ```
 
 Both of them open the matrix that contains the dataset. The differences are obvious: you cannot edit with 'browse' (and that is why you should use it instead of 'edit'!)

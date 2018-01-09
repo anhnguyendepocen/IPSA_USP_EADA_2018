@@ -1,4 +1,6 @@
-# Laboratory 8 - Generating new variables and replacing values
+# Laboratory 10 - Generating new variables and replacing values
+
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 

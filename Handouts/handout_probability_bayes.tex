@@ -10,11 +10,11 @@
 
 
 \title{\textbf{Esssentials of Applied Data Analysis\\
-				IPSA-USP Summer School 2017}\newline\\
+				IPSA-USP Summer School 2018}\newline\\
 				The Basics of Set Theory - Bayes' rule}
 
 \author{Leonardo Sangali Barone\\ \href{leonardo.barone@usp.br}{leonardo.barone@usp.br}}
-\date{jan/17}
+\date{jan/18}
 
 \begin{document}
 
@@ -39,13 +39,13 @@
 	Let's think about the problem for a second. Whithout any calculations, is she more likely to belong to which party? Make your guess.\\
 	
 	What is the probability that a a politician at random belongs to party $A_1$? And party $A_2$?
-	\[P(A_1) = \frac{40}{100} = \frac{2}{5} \]
-	\[P(A_2) = \frac{60}{100} = \frac{3}{5} \]
+	\[P(A_1) = \frac{60}{100} = \frac{3}{5} \]
+	\[P(A_2) = \frac{40}{100} = \frac{2}{5} \]
 	
 Or
-	\[P(A_2) = 1 - P(A_1) = 1 - \frac{2}{5} = \frac{3}{5}\]
+	\[P(A_2) = 1 - P(A_1) = 1 - \frac{3}{5} = \frac{2}{5}\]
 	
-	So without knowing that she is against the war, it is more likely that she belgons to party $A_1$, right? $2/5$ for $A_1$ and $3/5$ for $A_2$ would be a good first guess. But we do know she is against war and we can \textbf{update} our ``guess'' based on this information.
+	So without knowing that she is against the war, it is more likely that she belongs to party $A_1$, right? $3/5$ for $A_1$ and $2/5$ for $A_2$ would be a good first guess. But we do know she is against war and we can \textbf{update} our ``guess'' based on this information.
 
 	What is the probability that a politician from $A_1$ is against war? 
 	
@@ -92,13 +92,13 @@ Or
 	\subsection*{Bayes' rule - another way to think}
 	Another to think about Bayes rule is as	a theorem that explains how we ought to change our’s initial/hypothetical/subjective probability in response to empirical evidence. Let's rearrenge our notation:\\
 	
-	T = theory or hypothesis \\
+	$T$ = theory or hypothesis \\
 
-	E = represents a new piece of evidence that seems to confirm or disconfirm the theory.\\
+	$E$ = represents a new piece of evidence that seems to confirm or disconfirm the theory.\\
 	
-	P(T) =  Prior Belief = Probability of (T). We can think of it as the expectation that our theory is correct \textbf{BEFORE} empirical investigation.\\
+	$P(T)$ =  Prior Belief = Probability of $T$. We can think of it as the expectation that our theory is correct \textbf{BEFORE} empirical investigation.\\
 	
-	P(T|E) = Posterior Probability. We can think of it as the expectation that our theory is correct \textbf{AFTER} empirical investigation.\\
+	$P(T|E)$ = Posterior Probability. We can think of it as the expectation that our theory is correct \textbf{AFTER} empirical investigation.\\
 	
 	Then, we can use Bayes rule to compute the Posterior Probability of T being correct:\\
 	

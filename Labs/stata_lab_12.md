@@ -1,4 +1,6 @@
-# Laboratory 10 - Generating new variables and calculating functions of variables
+# Laboratory 12 - Generating new variables and calculating functions of variables
+
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 

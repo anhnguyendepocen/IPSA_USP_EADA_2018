@@ -1,4 +1,6 @@
-# Laboratory 7 - Comparison between groups and Box-plot graphs
+# Laboratory 9 - Comparison between groups and Box-plot graphs
+
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
@@ -14,8 +16,7 @@ The command in Stata to build a box-plot is "graph box". Let's use it to our var
 graph box api13
 ```
 
-Ugly graph, but very informative. The line in the middle of the box is the median of our variable. It means that half of our observations are less than, aproximally, 793 and half are larger this value. The box itself contains 50%
-of our observations. Therefore, the upper hinge of the box represents the third quartile, and the bottom hinge of the box represents the first quartile. The other lines show the upper and the bottom limits of the distribution. But, it doesn't mean that all of observations are between the lines shown in the graph. Box-plots also show observations that are considered outliers. That is, observations that do not fit well in the distribution. There are some formulas available to define what is a outlier. We can check how Stata defines outliers in Stata Manual. Also, in the Stata manual you will find a very good explanation (with figures) of how to interpret box-plots. To see this information, type:
+Ugly graph, but very informative. The line in the middle of the box is the median of our variable. It means that half of our observations are less than, aproximally, 793 and half are larger this value. The box itself contains 50% of our observations. Therefore, the upper hinge of the box represents the third quartile, and the bottom hinge of the box represents the first quartile. The other lines show the upper and the bottom limits of the distribution. But, it doesn't mean that all of observations are between the lines shown in the graph. Box-plots also show observations that are considered outliers. That is, observations that do not fit well in the distribution. There are some formulas available to define what is a outlier. We can check how Stata defines outliers in Stata Manual. Also, in the Stata manual you will find a very good explanation (with figures) of how to interpret box-plots. To see this information, type:
 
 ```
 help graph box 

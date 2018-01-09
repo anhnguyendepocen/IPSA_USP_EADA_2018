@@ -10,10 +10,10 @@
 
 
 \title{\textbf{Esssentials of Applied Data Analysis\\
-				IPSA-USP Summer School 2017}}
+				IPSA-USP Summer School 2018}}
 
 \author{Leonardo Sangali Barone\\ \href{leonardo.barone@usp.br}{leonardo.barone@usp.br}}
-\date{jan/17}
+\date{jan/18}
 
 \begin{document}
 
@@ -46,7 +46,12 @@
 		\[P(A\cap B) = 0\]
 			hence
 		 \[P(A|B) = P(B|A) = 0\] 
-
+		\item Suppose there are $A_1$, $A_2$,..., $A_n$ events and $A_1 \cup A_2 \cup... \cup A_n$ = S. $A_i$ events are mutually exclusive. Suppose there is another event $B$. For each $A_i$, $B$ has a different joint conditional probability $P(A_i|B)$. $B$ can be described as:
+	\[P(B) = P(A_1)*P(B|A_1)+P(A_2)*P(B|A_2)+...+P(A_n)*P(B|A_n)\]
+ 
+	The probability that an specific $A_i$ will occur given B is defined as:
+	\[P(A_i|B) = \frac{P(A_i)*P(B|A_i)}{P(A_1)*P(B|A_1)+P(A_2)*P(B|A_2)+...+P(A_n)*P(B|A_n)}\]
+	
 	\end{enumerate}
 
 \end{document}
