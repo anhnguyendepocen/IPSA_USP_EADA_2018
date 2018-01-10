@@ -10,11 +10,11 @@
 
 
 \title{\textbf{Esssentials of Applied Data Analysis\\
-				IPSA-USP Summer School 2017}\newline\\
+				IPSA-USP Summer School 2018}\newline\\
 				Expected Value}
 
 \author{Leonardo Sangali Barone\\ \href{leonardo.barone@usp.br}{leonardo.barone@usp.br}}
-\date{jan/17}
+\date{jan/18}
 
 \begin{document}
 
@@ -78,7 +78,7 @@ where $x_i$ is an occurence of the variable X and $f(x_i)$ is the probability ma
 \hline
 \end{tabular}\newline\\
 
-	Can we compute $E[X]$? No really. Expected value just make sense for numerical variables (either Discrete-Integer or Continous. For the rest we can work only with proportions of each category.\\
+	Can we compute $E[X]$? Not really. Expected value just makes sense for numerical variables (either Discrete-Integer or Continous. For the rest we can work only with proportions of each category.\\
 	
 	What if we had ``years of education'' instead of educational level?\\
 	
@@ -112,7 +112,7 @@ which means that we expect that a Fakeland citizen voted in $2.1$ of the last $4
 	
 	Also, if you sum a quantity $b$ to a random variable, the mean of the result variable will be the mean of the original variable plus $b$.\\
 	
-	Let's try it later on Stata!
+	Let's try it later in Stata!
 
 	\subsection*{Expectation and variance of a discrete random variable}
 	Another important quantity of a random variable is the variance. The name is self-explanatory: the variance measures how spread-out a variable is.\\
@@ -122,15 +122,15 @@ which means that we expect that a Fakeland citizen voted in $2.1$ of the last $4
 	
 where $x_i$ is an occurence of the variable X, E[X] is the expected value of X and $f(x_i)$ is the probability mass function (the probability that $x_i$ will occur).\\
 
-	Look the formula again and pay attention to the squared term, $[x_i - E[X]]$. Reading it aloud we would say ``the value of variable $X$ for observation $i$ minus the mean of variable $X$''. Or, more simply, ``how much observation $i$ \emph{deviate} from the mean in $X$''.\\
+	Look at the formula again and pay attention to the squared term, $[x_i - E[X]]$. Reading it aloud we would say ``the value of variable $X$ for observation $i$ minus the mean of variable $X$''. Or, more simply, ``how much observation $i$ \emph{deviate} from the mean in $X$''.\\
 
 	Why squared? Well, it is a mathematical trick. Deviations from the mean can be positive or negative. When squared, they all became positive (because the square of a number is always positive).\\
 	
 	We are left with the last term, which is the probability of $X = x_i$, which should be familiar to us by now.\\
 	
-	So the variance can be understood as the sum squared deviations from the mean weigthed by their probability of ocurrence. Much easier to remember, right?
+	So the variance can be understood as the sum of squared deviations from the mean weigthed by their probability of ocurrence. Much easier to remember, right?
 
-	\subsection*{Expectation and variance of a discrete random variable}
+	\subsection*{Variance of a discrete random variable}
 	Going back to the coin game (where heads pays off \$1 and tails pays off \$0), the variance of $X$ is:
 	\[Var[X] = \sum\limits_{i=1}^n[x_i - E[X]]^2 * f(x_i) = [0.5 - 0.5]^2 * 0 + 0.5 * 1 = 0.5\]
 
@@ -145,7 +145,7 @@ where $x_i$ is an occurence of the variable X, E[X] is the expected value of X a
 	
 	Also, if you sum a quantity $b$ to a random variable, the variance of the result variable will equal to the variance of the original variable.\\
 	
-	Let's try it later on Stata!
+	Let's try it later in Stata!
 
 	\subsection*{Expectation, mean, variance and standard deviation}
 

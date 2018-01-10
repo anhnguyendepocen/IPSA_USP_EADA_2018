@@ -49,8 +49,8 @@ At the end of the course, I will combine all of the handouts in a single documen
 - [Random variables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_random_variables.pdf)
 - [Building a fake dataset](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_building_fake_data.pdf)
 - [Discrete Random variables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_discrete_random_variables.pdf)
-- [Expected Value](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_expected_value.pdf)
 - [Joint Distributions](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_joint_distributions.pdf)
+- [Expected Value](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_expected_value.pdf)
 - [Covariance and Correlation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_covariance_correlation.pdf)
 - [Special Distributions](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_special_distributions.pdf)
 - [Central Limit Theorem](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_central_limit_theorem.pdf)
@@ -115,6 +115,8 @@ We will use this dataset to replicate published research and learn a little bit 
 - [Laboratory 12 - Generating new variables and calculating functions of variables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_12.md)
 - [Laboratory 13 - Confidence intervals and hypothesis test](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_13.md)
 
+Extra (Flávio's suggestion): [Introduction to Stata](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/introduction_to_Stata.pdf) by Andrew Q. Philips, University of Colorado Boulder and Summer School Professor
+
 ## Exercises and Activities
 
 
@@ -133,7 +135,7 @@ We will use this dataset to replicate published research and learn a little bit 
 
 ## Code and Miscellania
 
-- [Labor Market Field Experiment Paper](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/Bertrand_Mullainathan_paper)
+- [Labor Market Field Experiment Paper](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/Bertrand_Mullainathan_paper.pdf)
 - [Fake CVs from Labor Market Discrimination Exercise](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_cvs.pdf)
 - [Fake Politicians from Electoral Discrimination Exercise - 1](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_1.pdf)
 - [Fake Politicians from Electoral Discrimination Exercise - 2](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_2.pdf)

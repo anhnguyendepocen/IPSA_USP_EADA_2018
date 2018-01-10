@@ -4,7 +4,7 @@ Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
-We are going to learn generate tables with summary statistics. We will use 2 different datasets. We will use 3 different datasets we have been using in our lab sessions.
+We are going to learn how to generate tables with summary statistics. We will use 2 different datasets. We will use 3 different datasets we have been using in our lab sessions.
 
 ## Table with summary statistics
 
@@ -74,7 +74,7 @@ Take a few minutes to gess what does the mean means (sic). Hint: look at the tab
 
 The mean of a binary variable indicates the proportion of "ones" in that variable. In other words, it indicates the frequency of the category coded was one.
 
-One advantage of working with binary variables is that we can treat them, mathematically speaking, in the same way we treat continous variables. That's because the expected values (mean, variance, etc) are meaningfull.
+One advantage of working with binary variables is that we can treat them, mathematically speaking, in the same way we treat continous variables. That's because the expected values (mean, variance, etc) are meaningful.
 
 ## Table with summary statistics - Your turn
 
@@ -86,7 +86,7 @@ Go back to the Latinobarometer dataset. Recode your choosen variables into two c
 
 Open the California Department of Education dataset (again). Let's say, now, we want to observe the mean performance of different racial groups BY the parent's education, which is now coded into only two different categories.
 
-We could using the conditional "if" to acomplish the task:
+We could use the conditional "if" to acomplish the task:
 
 For low education parents:
 
@@ -108,7 +108,7 @@ A better alternative is to use the "by" clause in the tabstat command. Look how 
 tabstat aa_api13, by(parent_ed) stat(mean sd)
 ```
 
-Cool, right? And very, very powerful. What this tables shows us it that, for african american students, schools (or students on those schools) in which parents are more educated perform, ON AVERAGE, 81 point better then the other schools.
+Cool, right? And very, very powerful. What this tables shows us it that, for african american students, schools (or students in those schools) in which parents are more educated perform, ON AVERAGE, 81 point better then the other schools.
 
 We could do the same for a more boring variable, but that already has 3 categories, which is "charter" (type of school):
 
@@ -133,4 +133,4 @@ tabstat aa_api13 hi_api13 wh_api13, by(parent_ed) stat(mean sd)
 You are going to work with the two datasets. In the California Department of Education dataset I would like you to recode one of the following variables -- meals, avg_ed or some_col -- into categorical variables and observe test performances of each racial group BY the recoded variable. The recoded variable does not have to be recoded as dummy (because the variable is not being
 summarized). Analyse it. Don't worry if you think it is too challenging now. Ask for help.
 
-After you finish working with this dataset, go to Latinobarometer. Investigate the dummy variables you recoded BY ANY OTHER VARIABLE in the dataset you think is related to the recoded variable. Make hypothesis about the differences in proportions.
+After you finish working with this dataset, go to Latinobarometer. Investigate the dummy variables you recoded BY ANY OTHER VARIABLE in the dataset that you think is related to the recoded variable. Make hypothesis about the differences in proportions.

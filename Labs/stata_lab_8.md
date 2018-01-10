@@ -1,10 +1,10 @@
 # Laboratory 8 - Value labels
 
-Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
+Authors: Patrick Silva and [Leonardo Sangali Barone](leonardo.barone@usp.br)
 
 ## Objective
 
-So far, we have already learnt how to label variables (label var command) and how to rename variables (rename command). Sometimes, we also want to label variable values. In this lab, we are going to learn how to do it in Stata. Although many processes in Stata are straighforward, assigning labels to a value isn't. But, don't worry! It is not hard, it is just not as intuitive as the other commands and that we have learned so far. We will use the 2013 Growth Academic Performance Index (API) Data File in this lab.
+We have already seen how to label variables (label var command) and how to rename variables (rename command). Sometimes, we also want to label variable values. In this lab, we are going to learn how to do it in Stata. Although many processes in Stata are straighforward, assigning labels to a value isn't. But, don't worry! It is not hard, it is just not as intuitive as the other commands that we have seen so far. We will use the 2013 Growth Academic Performance Index (API) Data File in this lab.
 
 ## Value labels
 

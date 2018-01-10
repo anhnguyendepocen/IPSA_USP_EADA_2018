@@ -8,7 +8,7 @@ We are going to learn two new commands in Stata: generate and replace. The first
 
 ## Generate
 
-Please, open the California Deparment of Education Dataset Let's start with generate. When we are working with a new dataset we usually we want to generate a new variable that suits our problems. This new variable can be a function of our variables, a variable that contains only missing values, or a copy of other variables.
+Please, open the California Deparment of Education Dataset. Let's start with generate. When we are working with a new dataset we usually we want to generate a new variable that suits our problem. This new variable can be a function of other variables, a variable that contains only missing values, or a copy of some other variable.
 
 If we want to generate a variable with missing values, we can do the following:
 
@@ -26,7 +26,7 @@ gen copy_api13 = api13
 
 This command will produce a perfect copy of our original variable. It can be very useful when we want to perform some transformation in our variable and preserve the original one. 
 
-We can also generate variables that are the product of some expression. For instance, in our dataset, we have variables on the percentage of parents that have different educational degrees (not_hsg, hsg, some_col, col_grad, and grad_sch). We may be interested in check if the sum those variables is equal to 100%. To do it, we can use the following command line: 
+We can also generate variables that are the product of some expression. For instance, in our dataset, we have variables on the percentage of parents that have different educational degrees (not_hsg, hsg, some_col, col_grad, and grad_sch). We may be interested in checking if the sum those variables is equal to 100%. To do it, we can use the following command line: 
 
 ```
 gen check_education = not_hsg + hsg+some_col + col_grad + grad_sch
@@ -38,13 +38,12 @@ Now, let use codebook to observe our new variable:
 codebook check_education
 ```
 
-Ops! We discovered that our dataset has mistakes! In this case, we can't do
-anything about it because we don't have the original data. But, it is good to now it,
-since now we can inform our reader about our dataset problems
+Ops! We discovered that our dataset has some mistakes! In this case, we can't do
+anything about it because we don't have the original data. But, it is good to now it, since now we can inform our reader about our dataset problems and decide what to do with problematic data.
 
 ## Replace
 
-The command replace is similar to recode, but there are some important differences. First, if we use replace to recode a variable, we can't preserve our original variable. The only way to do it is by using "generate" first and creating a copy of our variable. The second, and more interesting one, is that with replace we can recode a variable using one or more variable as a condition. Let's start with the simple recodification.
+The command replace is similar to recode, but there are some important differences. First, if we use replace to recode a variable, we can't preserve our original variable. The only way to do it is by using "generate" first and creating a copy of our variable. The second, and more interesting one, is that with replace we can recode a variable using one or more variable as a condition. Let's start with a simple recodification.
 
 We want to recode the variable api12, but as replace doesn't have the option to preserve our original variable, let's start by generating a copy of our original variable:
 
@@ -78,8 +77,7 @@ Now, let's observe our new variable.
 tabulate cat_api12
 ```
 
-Let's do something a little bit different know. We want to generate a dichotomous variable in which the value 0 will represent
-schools the percentage of parents that have college and gran school degree is less than 50% and 1 will represent those schools in which at least 50% of the parents have college or gran school degrees.
+Let's do something a little bit different know. We want to generate a dichotomous variable in which the value 0 will represent schools the percentage of parents that have college and grad school degree is less than 50% and 1 will represent those schools in which at least 50% of the parents have college or grad school degrees.
 
 First, let's generate our new variable. It will contain only missing values.
 

@@ -10,11 +10,11 @@
 
 
 \title{\textbf{Esssentials of Applied Data Analysis\\
-				IPSA-USP Summer School 2017}\newline\\
+				IPSA-USP Summer School 2018}\newline\\
 				Discrete Random Variables}
 
 \author{Leonardo Sangali Barone\\ \href{leonardo.barone@usp.br}{leonardo.barone@usp.br}}
-\date{jan/17}
+\date{jan/18}
 
 \begin{document}
 
@@ -22,11 +22,11 @@
 
 \section*{Discrete Random Variables}
 
-	We will start generating the discrete variables. We already know that variables are called \emph{random} variables because they can take values according to their probability.\\
+	We already know that variables are called \emph{random} variables because they can take values according to their probability.\\
 	
 	\subsection*{First example: \emph{sex} of fake citizens}
 	
-	Let's start with the \emph{sex} variable, which we will name $X$. Playing Fakeland's God, I am decided that the distribution of sex within fake citizens is:\\
+	Let's start with the \emph{sex} variable, which we will name $X$. Playing Fakeland's God, I decided that the ``real'' distribution of sex in fake citizens is:\\
 	
 \begin{tabular}{|c|c|c|}
 \hline
@@ -41,7 +41,7 @@ $x_i$ are the values that the variable can assume (in this case, $x_1 = $ ``Male
 
 We can also write that the probability of our variable $X$ (\emph{sex}) beying equal $x_1$ (``Male'') is $P(X = x_1) = 0.4$. Again, can you understand this notation?\\
 
-The table representes a probability distribution (or model) of a certain variable. It is no empirical, because it is the ``True'' distribution of sex in the Fakeland population.\\
+The table representes a probability distribution (or model) of a certain variable. It is not empirical, because it is the ``true'' distribution of sex in the Fakeland population (which was decided by me).\\
 
 We can also represent the distribution in a bar plot, as in Figure~\ref{f1}:
 
@@ -62,7 +62,7 @@ We can also represent the distribution in a bar plot, as in Figure~\ref{f1}:
 	
 	What you have in your hands is a sample of Fakeland individuals. Randomness was responsable for picking 15 men and 15 women, even thought we were expecting 12 man and 18 women.\\
 
-	We differentiate probability distribution from a sample distribution. We can build a sample distribiution from a frequency table (ocurrences of the variable in the sample!). More generally, we can say we build distribuitions from the realizations of the variable (e.g. number of seats in a Legislative, Moore and Siegel, ch 10, pp. 202-203).\\
+	We differentiate \textbf{probability distribution} from \textbf{sample distribution}. We can build a sample distribiution from a frequency table (ocurrences of the variable in the sample!). More generally, we can say we build distribuitions from the realizations of the variable (e.g. number of seats in a Legislative, Moore and Siegel, ch 10, pp. 202-203).\\
 	
 	We can represent our sample distribution as follows:\\
 	
@@ -75,13 +75,13 @@ We can also represent the distribution in a bar plot, as in Figure~\ref{f1}:
 \hline
 \end{tabular}\\
 	
-	Where $f(x_i)$ means the \emph{relative frequency} of $x_i$ in our sample.//
+	Where $f(x_i)$ means the \emph{relative frequency} of $x_i$ in our sample.\\
 
-	Take a moment to see if you can understand this very important difference.
+	Take a moment to see if you can understand this very important difference between probability and sample distributions.
 
 	\subsection*{Why do we sample?}
 	
-	If the probability distribution is unknown, we can try to \textbf{estimate} it by taking the sample distribution. Let's look fot the other discrete variables in the fake dataset. All of the tables contain both the probability distribution that generated the sample and the sample distribution. For the sake of simplicity, we called all the variables as $X$, but you can use any other letter ($Y$ and $Z$ are also very common) or even subscripts (as in $X_1 ... X_n$).\\
+	If the probability distribution is unknown, we can try to \textbf{estimate} it by taking the sample distribution. Let's look at some other discrete variables in the fake dataset. All of the tables contain both the probability distribution that generated the sample and the sample distribution. For the sake of simplicity, we called all the variables as $X$, but you can use any other letter ($Y$ and $Z$ are also very common) or you can use subscripts (as in $X_1 ... X_n$).\\
 	
 	Educational Level:
 	
@@ -173,7 +173,7 @@ Build the sample distribution for the other discrete variables in the dataset us
 \hline
 \end{tabular}\newline\\
 
-Note: The realization of a random variable is a particular value that it takes and we usually represent it with a small letter (e.g. $x_i$ is a realization of $X$).\\
+Note: The realization of a random variable is a particular value that it takes and we usually represent it with a small letter (e.g. $x_i$ is a particular ocurrence of $X$).\\
 
 	B) Let's call $Y$ the variable that indicates the result we obtain when we roll a pair of dice and sum the results. What is the distribution of $Y$?\\
 	
@@ -208,7 +208,7 @@ Note: The realization of a random variable is a particular value that it takes a
 
 
 	\subsection*{Discrete Random variables - Cumulative Distribution}
-	For ordered or integer discrete random variables ($X$), we might be interested in $P(X \leq x_i)$ instead of $P(X=x_i)$, which is just the probability function $f(x_i)$. We can also think of $P(X \leq x_i)$ as a function, $F(X)$, and it is defined as:
+	For ordered or integer discrete random variables ($X$), we might be interested in $P(X \leq x_i)$ (probability of getting a value less or equal $x_i$) instead of $P(X=x_i)$ (probability of getting $x_i$). We can also think of $P(X \leq x_i)$ as a function, $F(X)$, and it is defined as:
 	\[F(x_i) = P(X \leq x_i) =  \sum\limits_{i\leq x_i} f(i)\]
 	This function is called the cumulative distribution function.\\
 	
@@ -245,7 +245,7 @@ Note: The realization of a random variable is a particular value that it takes a
 \hline
 \end{tabular}\newline\\
 
-	For number of children in fakeland, the cumulative distribtuion of the variable is:\\
+	For the variable number of children in fakeland, the cumulative distribtuion of the variable is:\\
 
 \begin{tabular}{|c|c|c|c|}
 \hline

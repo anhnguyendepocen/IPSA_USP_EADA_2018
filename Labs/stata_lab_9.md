@@ -1,6 +1,6 @@
 # Laboratory 9 - Comparison between groups and Box-plot graphs
 
-Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
+Authors: Patrick Silva and [Leonardo Sangali Barone](leonardo.barone@usp.br)
 
 ## Objective
 
@@ -16,7 +16,7 @@ The command in Stata to build a box-plot is "graph box". Let's use it to our var
 graph box api13
 ```
 
-Ugly graph, but very informative. The line in the middle of the box is the median of our variable. It means that half of our observations are less than, aproximally, 793 and half are larger this value. The box itself contains 50% of our observations. Therefore, the upper hinge of the box represents the third quartile, and the bottom hinge of the box represents the first quartile. The other lines show the upper and the bottom limits of the distribution. But, it doesn't mean that all of observations are between the lines shown in the graph. Box-plots also show observations that are considered outliers. That is, observations that do not fit well in the distribution. There are some formulas available to define what is a outlier. We can check how Stata defines outliers in Stata Manual. Also, in the Stata manual you will find a very good explanation (with figures) of how to interpret box-plots. To see this information, type:
+Ugly graph, but very informative. The line in the middle of the box is the median of our variable. It means that half of our observations are less than, aproximally, 793 and half are larger than this value. The box itself contains 50% of our observations. Therefore, the upper hinge of the box represents the third quartile, and the bottom hinge of the box represents the first quartile. The other lines show the upper and the bottom limits of the distribution. But, it doesn't mean that all of observations are between the lines shown in the graph. Box-plots also show observations that are considered outliers. That is, observations that do not fit well in the distribution. There are some formulas available to define what is an outlier. We can check how Stata defines outliers in Stata Manual. Also, in the Stata manual you will find a very good explanation (with figures) of how to interpret box-plots. To see this information, type:
 
 ```
 help graph box 
@@ -24,12 +24,11 @@ help graph box
 
 And click on the name [R] graph box. 
 
-Now, that we know how to do a box-plot and to find information about it. Let's
+Now, that we know how to do a box-plot and to find information about it, let's
 produce some nice graphs.
 
 One of the best uses of box-plots is to compare distributions. For instance,
-if we want to compare the distribution of api13 and api12 we can do a box-plot for 
-both variables:
+if we want to compare the distribution of api13 and api12 we can do a box-plot for both variables:
 
 ```
 graph box api13 api12
@@ -59,4 +58,4 @@ Great, isn't it?
 
 a) Open the California Department of Education dataset. Let's say, now, we want to observe the performance of different racial groups. Do a box-plot to the variables api13, aa_api13, hi_api13, wh_api13 and sd_api13. What do you observe? How are the distributions? Are they similar?
 
-b) Let's use box-plots to compare between groups. We want to compare the distributions between different levels of the variable Average Parent Education Level.  Recode the variable into two categories and build the box-plots. 
+b) Let's use box-plots to compare between groups. We want to compare the distributions between different levels of the variable Average Parent Education Level. Recode the variable into two categories and build the box-plots. 

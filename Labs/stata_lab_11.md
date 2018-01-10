@@ -4,11 +4,11 @@ Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
-We are going to learn the basics of how to manage variables.We will produce frequency tables, histograms and densities. We will use 2 different datasets. We will use 2 different datasets, the 2013 Growth Academic Performance Index (API) Data File and the 2011 Latinobarometer.
+Two way graphs are good choices if we want to represent the relationship between two different variables in our dataset. In this lab we will see how we do it.
 
 ## Correlation
 
-In class, we explored correlation and observed how to represent the joint distribution of two continuous variables. Let's pratice on Stata. We will use the California Department of Education dataset.
+In class, we explored correlation and observed how to represent the joint distribution of two continuous variables. Let's pratice in Stata. We will use the California Department of Education dataset.
 
 First, let's look at the individual distribuion of the variables we are going to work with: api13, api12, aa_api13, hi_api13 and wh_api13.
 
@@ -50,15 +50,15 @@ Let's see how we plot the joint distribution of two variables, api12 and api13:
 twoway scatter (api13 api12)
 ```
 
-Nice, isn't it? A great virtue of the twoway command is that we can overlay different graphs. In the graph above, we choose just to represent a scatterplot. In the graph below we will show both the scatter plot AND a linear fit that represent the relationship between the two variables
+Nice, isn't it? A great virtue of the twoway command is that we can overlap different graphs. In the graph above, we chose just to represent a scatterplot. In the graph below we will show both the scatter plot AND a linear fit that represent the relationship between the two variables
 
 ```
 twoway (scatter api13 api12) (lfit api13 api12) 
 ```
 
-The linear fit is the regression line of api13 by api12. We will come back to this in the near future.
+The linear fit is the regression line of api13 by api12. We will come back to this in the near future. This linear fit is the regression line. 
 
-Finally, in the same way we can look at a couple of correlations at the same time, we can produce a matrix with scatter plots for each pair of variables.
+Finally, in the same way we can look at a couple of correlations at the simultaneously, we can produce a matrix with scatter plots for each pair of variables.
 
 ```
 graph matrix api13 api12 aa_api13 hi_api13 wh_api13
@@ -68,6 +68,6 @@ Very cool! You can use this matrix do explore the relationship between the pairs
 
 ## Two-way graphs - Your turn
 
-a) Make two-way graphs for the variables you found out in the last exercise. Your graphs should include a linear fit. Compare the variables that correlate high with api13 with the variables thatcorrelate low with api13.
+a) Make two-way graphs for the variables you found out in the last exercise. Your graphs should include a linear fit. Compare the variables that correlate high with api13 with the variables thatc orrelate low with api13.
 
-b) Use the graph matrix to explore the relationship of the variables you choose amog each other (not with api13 anymore). Are they correlated with each other? What would you think would be implications of a high correlation among them?
+b) Use the graph matrix to explore the relationship of the variables you chose among each other (not with api13 anymore). Are they correlated with each other? What would you think would be implications of a high correlation among them?

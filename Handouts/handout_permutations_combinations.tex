@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[parfill]{parskip}
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+
+\title{\textbf{Esssentials of Applied Data Analysis\\
+				IPSA-USP Summer School 2018}\newline\\
+				Permutations and combinantions}
+
+\author{Leonardo Sangali Barone\\ \href{leonardo.barone@usp.br}{leonardo.barone@usp.br}}
+\date{jan/18}
+
+\begin{document}
+
+\maketitle
+
+\section*{Permutations and combinantions}
+
+
+	\subsection*{Permutations}
+
+	In situatuations where events have equal probability to happen, it is useful to have a technique to count the number of elements on the sample space. The name of this technique is \emph{permutations}
+
+	For example, consider we have 3 unique objects: A, B and C. In how many unique ways those 3 elements can be arranged in pairs? Answer: {AB, AC, BA, BC, CA, CB}.
+	
+	How do we compute permutations for a large number of elements? The number of permutations when arranging $k$ elements out of $n$ unique objects is:
+	
+	\[P_n^k= n \times (n -1) \times (n-2) \times...\times (n-k+2) \times (n-k + 1) = \frac{n!}{(n-k)!} \]
+
+	In the ABC example, $k = 2$ and $n = 3$, thus $P_3^2 = \frac{3!}{(3-2)!} = \frac{3 \times 2 \times 1}{1} = 6$ 		
+	
+	If we want to arrange $k = 2$ candidates out of $5$ to make a speech (in an specific order) we would have $P_5^2 = \frac{5!}{(5-2)!} = \frac{5!}{3!} = \frac{5 \times 4 \times 3 \times 2 \times 1}{3 \times 2 \times 1} = 5 \times 4 = 20$ .	
+	
+	\subsection*{Combinations}
+	
+	\emph{Combinations} are permutations for which the order of the elements does not matter. In our ABC example, AB would be the same combination as BA.
+
+	We compute combinations by dividing the permutation by $k!$:
+	
+	\[C_n^k = \binom{n}{k} = \frac{P_n^k}{k!}  = \frac{n!}{k!(n-k)!} \]
+
+	If we want to combine $k = 2$ candidates out of $5$ in a debate we would have $P_5^2 = \frac{5!}{2!(5-2)!} = \frac{5!}{2!3!} = \frac{5 \times 4 \times 3 \times 2 \times 1}{2 \ times3 \times 2 \times 1} = 10$ .	
+
+	
+\end{document}	
