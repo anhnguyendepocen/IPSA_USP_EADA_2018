@@ -10,11 +10,11 @@
 
 
 \title{\textbf{Esssentials of Applied Data Analysis\\
-				IPSA-USP Summer School 2017}\newline\\
+				IPSA-USP Summer School 2018}\newline\\
 				Sample, Confidence Intervals and Hypothesis testing in Classical Statistics}
 
 \author{Leonardo Sangali Barone\\ \href{leonardo.barone@usp.br}{leonardo.barone@usp.br}}
-\date{jan/17}
+\date{jan/18}
 
 \begin{document}
 
@@ -48,7 +48,7 @@
 \hline
 \end{tabular}
 
-With the sample formulas we can obtain an estimate of the parameters of the population ($\hat{\mu}$ and $\hat{\sigma}^2$ are our best guess of what the population mean and population variance are).
+With the sample formulas we can obtain an estimate of the parameters of the population ($\hat{\mu}$ and $\hat{\sigma}^2$ are our best guesses of what the population mean and population variance are).
 
 	\subsection*{Population \emph{versus} sample - proportion}
 	In some cases, we are interested in the sample estimation of a proportion, whose notation and formulas cab ne found below.\\
@@ -132,11 +132,11 @@ the parameter value.\\
 	
 	\emph{First step:}\\
 	
-	How to build a confidence interval? First, we take the sample estimate of the paramater. If we want to know the population mean ($\mu$), than we take the population sample ($\bar{x}$). If we want to know the population proportion $p$, then we take the $\hat{p}$.\\
+	How to build a confidence interval? First, we take the sample estimate of the parameter. If we want to know the population mean ($\mu$), than we take the population sample ($\bar{x}$). If we want to know the population proportion $p$, then we take the $\hat{p}$.\\
 
 	\emph{Second step:}\\
 
-	We define a level of confidence ($\gamma$), let's say, $95\%$. By choosing a level of condifence we are saying that if we sample from our population multiple times, in $95\%$ of the times the population parameter will fall in my interval.\\
+	We define a level of confidence ($\gamma$), let's say, $95\%$. By choosing a level of confidence we are saying that if we sample from our population multiple times, in $95\%$ of the times the population parameter will fall in my interval.\\
 	
 	We locate on the $Z$ curve the interval, centered at $0$ whose probability is $0.95$. This inteval is $[-1.96;1.96]$. We call the limits of the interval critical values ($z_\gamma$) .
 
@@ -189,7 +189,7 @@ Now, imagine that we want to define the maximum error ($\epsilon$) we want and w
 
 	With a good knowledge of how the normal curve is built, sampling e confidence intervals we can now test hypothesis.\\
 	
-	We are going to see today only the mean hypothesis testing. If we get the intuition correctly, any other test is easy\\
+	We are going to see today only the mean hypothesis testing. If we get the intuition correctly, any other test will be easy.\\
 	
 	We also call hypothesis testing as significance tests.
 
@@ -197,7 +197,7 @@ Now, imagine that we want to define the maximum error ($\epsilon$) we want and w
 	\begin{itemize}
 		\item If we know something about the population (mean and variance), we might want to know if a random sample actually comes from that population (and not from some other population);
 		\item If we don't know anything about the population, we might to learn something (example: mean) or we might want to see if it is equal to our theory/prior belief;
-		\item And finally (and that is more usefull in social sciences) we might want to compare two populations (groups!) and see if they are equal.
+		\item And finally (and that is more usefull in social sciences) we might want to compare two measurements of some the same units (ex: school performance in 2012 vs 2013) or two populations (groups! ex: white-sounding name resumes vs black-sounding) and see if they are equal. In the first case we are assessing the \emph{mean difference} of the 2 measurements. In the second, the \emph{difference of means} of the 2 groups. Tricky, isn't it?
 	\end{itemize}
 
 	\subsection*{Null Hypothesis}
@@ -205,9 +205,12 @@ Now, imagine that we want to define the maximum error ($\epsilon$) we want and w
 	\begin{itemize}
 		\item If we know something about the population (mean and variance), we might want to know if a random sample actually comes from that population (and not from some other population)
 		\[H_0: \mu = \text{population mean}\]
-		\item If we don't know anything about the population, we might to learn something (example: mean) or we might want to see if it is equal to our theory/prior belief. Zero is a commom value to be tested.
+		\item If we don't know anything about the population, we might want to learn something (example: mean) or we might want to see if it is equal to our theory/prior belief. Zero is a commom value to be tested.
 		\[H_0: \mu = \text{hypothetical value} \]
-		\item Finally (and that is more usefull in social sciences) we might want to compare two populations (groups!) and see if they are equal.
+		\item Finally (and that is more usefull the in social sciences) we might want to compare two measurements ($X_1$ and $X_2$) of some the same units (mean difference): 
+		\[H_0: \mu_{(X_1 - X_2)} = 0\]
+		
+		Or two populations (groups!) and see if they are equal (difference of means).
 		\[H_0: \mu_{diff} = \mu_1 - \mu_2 = 0\]
 	\end{itemize}
 
@@ -216,12 +219,12 @@ Now, imagine that we want to define the maximum error ($\epsilon$) we want and w
 	\begin{itemize}
 		\item Your null hypothesis ($H_0$) is the one to be rejected.
 		\item Your null hypothesis is the one that has the $=$ symbol. You can say that it is different by rejecting that it's equal, but not the opposite.
-		\item If you can do with the sample mean, you can do with the sample proportions. Just substitute $\mu$ for $p$, $\bar{x}$ for $\bar{p}$ and $\hat{\sigma}_{\bar{x}}$ for $\hat{\sigma}_{\hat{p}}$.
-		\item If you are comparing two populations, than you best counterfactual is zero difference. If you are testing dependence, then your best counterfactual is independence. If you are looking for a pattern, then randomness is your counterfactual.
+		\item If you can do it with the sample mean, you can do it with the sample proportions. Just substitute $\mu$ for $p$, $\bar{x}$ for $\bar{p}$ and $\hat{\sigma}_{\bar{x}}$ for $\hat{\sigma}_{\hat{p}}$.
+		\item If you are comparing two measurements or two populations, than your best counterfactual is zero difference. If you are testing dependence, then your best counterfactual is independence. If you are looking for a pattern, then randomness is your counterfactual.
 	\end{itemize}
 
 	\subsection*{Hypothesis testing - $Z$ or $t$?}
-	You will see that for sifnificance tests we will use t-statistics. Remember that for samples over 30 observations it doesn't really matter in pratice which one to use. If you don't know which one to use, ask yourself
+	You will see that for significance tests we will use t-statistics. Remember that for samples over 30 observations it doesn't really matter in pratice which one to use. If you don't know which one to use, ask yourself
 	\begin{enumerate}
 		\item Do you know the population variance? If not, use $t$.
 		\item Do you have more than 30 observations? If not, use $t$.

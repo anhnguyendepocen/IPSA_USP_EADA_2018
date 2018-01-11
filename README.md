@@ -137,8 +137,8 @@ Extra (Flávio's suggestion): [Introduction to Stata](https://github.com/leobaro
 
 - [Labor Market Field Experiment Paper](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/Bertrand_Mullainathan_paper.pdf)
 - [Fake CVs from Labor Market Discrimination Exercise](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_cvs.pdf)
-- [Fake Politicians from Electoral Discrimination Exercise - 1](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_1.pdf)
-- [Fake Politicians from Electoral Discrimination Exercise - 2](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_2.pdf)
+- [Fake Politicians from Race Discrimination Exercise - 1](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_1.pdf)
+- [Fake Politicians from Race Discrimination Exercise - 2](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_2.pdf)
 - [Stata Coin Simulation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/coin_simulation.do)
 - [Data of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_data.csv)
 - [R code to build of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/simulated_dataset.R)

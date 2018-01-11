@@ -10,11 +10,11 @@
 
 
 \title{\textbf{Esssentials of Applied Data Analysis\\
-				IPSA-USP Summer School 2017}\newline\\
+				IPSA-USP Summer School 2018}\newline\\
 				Special Probability Distributions}
 
 \author{Leonardo Sangali Barone\\ \href{leonardo.barone@usp.br}{leonardo.barone@usp.br}}
-\date{jan/17}
+\date{jan/18}
 
 \begin{document}
 
@@ -29,7 +29,7 @@
 
 
 	\subsection*{Probability Distributions - most well-known}
-	We are going to cover only a few distributions:\\
+	We are going to cover only 5 distributions:\\
 
 	Discrete: 
 	\begin{itemize}
@@ -42,16 +42,13 @@
 	\begin{itemize}
 		\item Uniform
 		\item Normal
-		\item Chi-square (gamma)
-		\item F
-		\item t-student
 	\end{itemize}
 
-	NOTE: I have simplified the Handout to the uniform, bernoulli, binomial, normal distribution for the 2017 material
+	However, there are several discrete and continuous distributions important to model social phenomena. You can take a look at that in M\&S Chapter 10.
 		
 	\subsection*{Discrete Probability Distributions - Uniform}
 
-	The uniform distribution is the simple case of probability model (for discrete and continuous variables). Distributions of the class have in common the fact that every value of the random variable has the same probability of occuring.\\
+	The uniform distribution is the simplest case of probability model (for discrete and continuous variables). Distributions of this class have in common the fact that every value of the random variable has the same probability of occuring.\\
 	
 	In the discrete case, $P(X=x_i) = 1/k$, where k is the number of possible outcomes for the variable.\\
 
@@ -75,7 +72,7 @@
 	\[E[X] = \frac{(a+b)^2}{12} \]
 
 	\subsection*{Discrete Probability Distributions - Bernoulli}
-	Imagine any expetiment that has a probability of success $P(X=1) = p$ and a probability of failure $P(X=0) = 1-p = q$. An experiment like this is a Bernoulli experiment and it generates a distribution.\\
+	Imagine any expetiment that has a probability of success $P(X=1) = p$ and a probability of failure $P(X=0) = 1-p = q$ (like a toss coin). An experiment like this is a Bernoulli experiment and it generates a distribution.\\
 
 		The expected value of a Bernoulli variable is:
 		\[E[X] = p\]
@@ -85,7 +82,7 @@
 
 	\subsection*{Discrete Probability Distributions - Binomial}
 	
-	Now, instead of executiong the Bernoulli experiment only once, let's do the experiment $n$ times and count the number of successes.\\
+	Now, instead of executing the Bernoulli experiment only once, let's do the experiment $n$ times and count the number of successes.\\
 
 	Let's do it on stata.\\
 
@@ -112,12 +109,12 @@
 \hline
 	Number of heads $(x)$ & $P(X=x)$\\
 \hline
-0 & $\binom{5}{0} * (0.5)^0 * (0.5)^{5-0}$\\
-1 & $\binom{5}{1} * (0.5)^1 * (0.5)^{5-1}$\\
-2 & $\binom{5}{2} * (0.5)^2 * (0.5)^{5-2}$\\
-3 & $\binom{5}{3} * (0.5)^3 * (0.5)^{5-3}$\\
-4 & $\binom{5}{4} * (0.5)^4 * (0.5)^{5-4}$\\
-5 & $\binom{5}{5} * (0.5)^5 * (0.5)^{5-5}$\\
+0 & $\binom{5}{0} * (0.5)^0 * (0.5)^{5-0} = 1 * (0.5)^5$\\
+1 & $\binom{5}{1} * (0.5)^1 * (0.5)^{5-1} = 5 * (0.5)^5$\\
+2 & $\binom{5}{2} * (0.5)^2 * (0.5)^{5-2} = 10 * (0.5)^5$\\
+3 & $\binom{5}{3} * (0.5)^3 * (0.5)^{5-3} = 10 * (0.5)^5$\\
+4 & $\binom{5}{4} * (0.5)^4 * (0.5)^{5-4} = 5 * (0.5)^5$\\
+5 & $\binom{5}{5} * (0.5)^5 * (0.5)^{5-5} = 1 * (0.5)^5$\\
 \hline
 \end{tabular}
 

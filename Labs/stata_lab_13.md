@@ -1,6 +1,6 @@
-# Laboratory 11 - Confidence intervals and hypothesis test
+# Laboratory 13 - Confidence intervals and hypothesis test
 
-Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and [Patrick Silva](leonardo.barone@usp.br)
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva
 
 ## Objective
 
@@ -8,7 +8,7 @@ We are going to learn the basics of confidence intervals and hypothesis test. We
 
 ## Confidence intervals
 
-You might not have noticed, but all the informatiion that is necessary to produce a confidence interval for a continuous variable, the mean and the standard deviation, was already available at the summary of the the variable:
+You might not have noticed, but all the informatiion that is necessary to produce a confidence interval for a continuous variable, the mean and the standard deviation, is available at the variable summary:
 
 ```
 summarize api13
@@ -16,18 +16,18 @@ display 783.7786 - 1,96 103.7396
 display 783.7786 + 1,96 103.7396  
 ```
 
-Do you remember where the number 1.96 comes from? If not, go back to the readings or presentations.
+Do you remember where the number 1.96 comes from? If we want to build a 95% confidence interval, we need to add/subtract 1.96 standard deviations to/from the mean (1.96 is the critical value that defines 95% at the normal curve with 0 mean and 1 standard deviation). Go back to the readings or presentations to review it.
 
-Still, you can use the "ci" command in order to observe the confidence interval of several variables:
+If you don't want to do it "manually", you can use the "ci" command in order to observe the confidence interval of several variables:
 
 ```
 ci api13
 ci api13 wh_api13 hi_api13
 ```
 
-Remember that confidence intervals are useful when we want to know the interval that the population parameter (in this case, the mean), is  likely to lie. The correct interpretation for a 95% confidence interval is: if we take several samples, the true parameter will lie in the confidence interval of 95% of the samples. It is wrong to say that "the probability of the true parameter lying within the interval is 95%" or equivalente statements. Can you understand this difference?
+Remember that confidence intervals are useful when we want to know the interval that the population parameter (in this case, the mean) is likely to fall. The correct interpretation for a 95% confidence interval is: if we take several samples, the true parameter will fall in the confidence interval of 95% of the samples. It is wrong to say that "the probability of the true parameter lying within the interval is 95%" or equivalente statements. Can you understand this difference?
 
-We can also use confidence interval for proportions or, more precisely, for binomial variables. For example, let's recode the fre meals percentage variable, "meals", as a 0 and 1 variable
+We can also use confidence interval for proportions or, more precisely, for variable with binomial distributions. For example, let's recode the fre meals percentage variable, "meals", as a 0 and 1 variable
 
 ```
 recode meals (0/50 = 0 "Small # of Free Meals") (50/100 =  1 "Great # of Free Meals"), gen(fm)
@@ -39,15 +39,15 @@ The confidence interval for this variable is
 ci fm, binomial 
 ```
 
-Easy right? You can train before you move on.
+Easy right? You can train a little bit more with other variables before you move on.
 
 ## Hypothesis test
 
-Hypothesis test is a very powerful tool for science making. With this tool we can test if simple statement about the data holds.Before we move on, however, try to understand the difference between the two statements below (in terms of how the data is organized)
+Hypothesis test is a very powerful tool for science making. With this tool we can test if simple statement about the data holds. Before we move on, however, try to understand the difference between the two statements below (in terms of how the data is organized).
 
-The first one is "the number of students with free meals doesn't is not related to the school performance on the standardized test"
+Statment 1: "The first one is "the number of students with free meals is not related to the school performance on the standardized test"
 
-School performance is one variable in our dataset: "api13" Percentage of free meals, another (we will use the recoded categorical variable for now): fm
+School performance is one variable in our dataset: "api13" Percentage of free meals, another (we will use the recoded categorical variable): fm
 
 So what we need to do is to use the free meal variable to separate the collum/variable of performance into two parts and compare the mean of these two parts.
 
@@ -61,7 +61,9 @@ graph box api13, by(fm)
 
 Notice that the groups can have different sizes. So far so good? If not, ask for help. We can suspect that the statement might be wrong, since the groups seem to have DIFFERENT MEANS.
 
-Now, we are going to observe a second statment: "the measurement for white students performance is, on average, equal to to the measurement for hispanic students performance".
+Now, we are going to observe a second statment. 
+
+Statmet 2: "the measurement for white students performance is, on average, equal to to the measurement for hispanic students performance".
 
 Now, what we are doing is to compare the differences, IN EACH SCHOOL, of two different measurments, one for white students and the other one for hispanic students. Our statement tells us that the MEAN OF THE DIFFERENCE between the two measurements is, on average, zero.
 
@@ -79,14 +81,14 @@ generate diff = wh_api13 - hi_api13
 summarize diff
 ```
 
-It looks like that our is statement is wrong, because the MEAN OF THE  DIFFERENCE seems to be different from zero.
+It looks like our is statement is wrong, because the MEAN OF THE DIFFERENCE seems to be different from zero.
 
 Before you move on, it is crucial that you understand that these two problems are different. In the first one, we separete one variable into two groups by 
 using a group variable. In the second one, we compare two variables.
 
 Don't move forward if you didn't get the difference. Ask for help.
 
-To perform both test is quite easy. To test if DIFFERENCE OF MEANS is zero  we use the "ttest" command with the option by:
+To perform both tests is quite easy. To test if DIFFERENCE OF MEANS is zero  we use the "ttest" command with the option by:
 
 ```
 ttest api13, by(fm)
@@ -104,13 +106,13 @@ Now, try to interpret the test.
 
 ## Hypothesis test - Your turn
 
-Formulate at least one of the each of the tests above (difference of means and mean of the difference) using the dataset. Interpret it.
+Formulate at least one of each of the tests above (difference of means and mean of the difference) using the dataset. Interpret it.
 
 ## Hypothesis test for proportions
 
-We can do exactly what we did for continuous variables with proportions. Go back to Latinobarometer. There are basically no continuous variables at the survey. Stiil, we can use hypothesis test to test proportions.
+We can do exactly what we did for continuous variables with proportions. Go back to Latinobarometer. There are basically no continuous variables at the survey. Still, we can use hypothesis test to compare proportions.
 
-Let's start by recoding variables in order to performa a difference of proportion test. We will test if the proportions of people who think that the income distribution is Fair is equal among who approves and who disapproves Dilma's goverment. Check the code for the recoding below:
+Let's start by recoding variables in order to perform a DIFFERENCE OF PROPORTIONS test. We will test if the proportions of people who think that the income distribution is Fair is equal among who approves and who disapproves Dilma's goverment. Check the code for the recoding below:
 
 ```
 tabulate P12ST
@@ -141,7 +143,7 @@ prtest distrib, by(approval)
 
 Quite similar to what we did before, isn't it? Now, try to interpret it.
 
-Finally, we are going to perform a mean of the difference test for  proportions by using the opinion of respondents about USA and Venezuela
+Finally, we are going to perform a MEAN OF THE DIFFERENCE TEST FOR PROPORTIONS by using the opinion of respondents about USA and Venezuela
 
 First, we exam and recode the variables:
 
