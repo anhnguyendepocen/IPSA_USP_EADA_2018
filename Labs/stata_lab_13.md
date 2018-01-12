@@ -8,21 +8,21 @@ We are going to learn the basics of confidence intervals and hypothesis test. We
 
 ## Confidence intervals
 
-You might not have noticed, but all the informatiion that is necessary to produce a confidence interval for a continuous variable, the mean and the standard deviation, is available at the variable summary:
+You might not have noticed, but all the information that is necessary to produce a confidence interval for a continuous variable, the mean and the standard deviation, is available at the variable summary:
 
 ```
 summarize api13
-display 783.7786 - 1,96 103.7396  
-display 783.7786 + 1,96 103.7396  
+display 783.7786 - 1.96*103.7396 
+display 783.7786 + 1.96*103.7396
 ```
 
 Do you remember where the number 1.96 comes from? If we want to build a 95% confidence interval, we need to add/subtract 1.96 standard deviations to/from the mean (1.96 is the critical value that defines 95% at the normal curve with 0 mean and 1 standard deviation). Go back to the readings or presentations to review it.
 
-If you don't want to do it "manually", you can use the "ci" command in order to observe the confidence interval of several variables:
+If you don't want to do it "manually", you can use the "ci means" command in order to observe the confidence interval of several variables:
 
 ```
-ci api13
-ci api13 wh_api13 hi_api13
+ci means api13
+ci means api13 wh_api13 hi_api13
 ```
 
 Remember that confidence intervals are useful when we want to know the interval that the population parameter (in this case, the mean) is likely to fall. The correct interpretation for a 95% confidence interval is: if we take several samples, the true parameter will fall in the confidence interval of 95% of the samples. It is wrong to say that "the probability of the true parameter lying within the interval is 95%" or equivalente statements. Can you understand this difference?
@@ -30,13 +30,13 @@ Remember that confidence intervals are useful when we want to know the interval 
 We can also use confidence interval for proportions or, more precisely, for variable with binomial distributions. For example, let's recode the fre meals percentage variable, "meals", as a 0 and 1 variable
 
 ```
-recode meals (0/50 = 0 "Small # of Free Meals") (50/100 =  1 "Great # of Free Meals"), gen(fm)
+recode meals (0/50 = 0 "Small # of Free Meals") (50/100 = 1 "Great # of Free Meals"), gen(fm)
 ```
 
 The confidence interval for this variable is
 
 ```
-ci fm, binomial 
+ci proportion fm, exact //Note: option exact specifies Clopper-Pearson binomial confidence intervals
 ```
 
 Easy right? You can train a little bit more with other variables before you move on.
@@ -55,7 +55,7 @@ We can do it with tables or box plots to visualize the DIFFERENCE OF MEANS betwe
 
 ```
 tabulate fm
-tabstat api13, by(fm) stat(mean sd)
+tabstat api13, by(fm) stat(mean sd) 
 graph box api13, by(fm)
 ```
 
@@ -70,14 +70,14 @@ Now, what we are doing is to compare the differences, IN EACH SCHOOL, of two dif
 We can, again, use tables and box plots to explore this statement:
 
 ```
-summarize wh_api13 hi_api12
+summarize wh_api13 hi_api12 
 graph box wh_api13 hi_api12
 ```
 
 We could even generate a variable which is the difference between the two measurements and summarize it:
 
 ```
-generate diff = wh_api13 - hi_api13
+generate diff = wh_api13 - hi_api13 
 summarize diff
 ```
 
@@ -117,14 +117,12 @@ Let's start by recoding variables in order to perform a DIFFERENCE OF PROPORTION
 ```
 tabulate P12ST
 tabulate P12ST, nolabel
-recode P12ST (-1 = . ) (1/2 = 1 "Fair") (3/4 = 0  "Unfair"), gen(distrib)
+recode P12ST (-1 = . ) (1/2 = 1 "Fair") (3/4 = 0 "Unfair"), gen(distrib) 
 tabulate distrib
-```
-
-```
 tabulate P36ST
 tabulate P36ST, nolabel
-recode P36ST (-1 = . ) (1 = 1 "Approves Dilma") (2 = 0  "Disapproves Dilma"), gen(approval)
+recode P36ST (-1 = . ) (1 = 1 "Approves Dilma") (2 = 0 "Disapproves Dilma"), gen(approval)
+tabulate approval
 tabulate approval
 ```
 
