@@ -115,6 +115,7 @@ We will use this dataset to replicate published research and learn a little bit 
 - [Laboratory 12 - Generating new variables and calculating functions of variables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_12.md)
 - [Laboratory 13 - Confidence intervals and hypothesis test](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_13.md)
 - [Simulations](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/Simulations.do)
+- [Regression with Stata - UCLA-IDRE Web Book](https://stats.idre.ucla.edu/stata/webbooks/reg/chapter1/regressionwith-statachapter-1-simple-and-multiple-regression/)
 
 Extra (Flávio's suggestion): [Introduction to Stata](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/introduction_to_Stata.pdf) by Andrew Q. Philips, University of Colorado Boulder and Summer School Professor
 
