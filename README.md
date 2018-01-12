@@ -55,11 +55,11 @@ At the end of the course, I will combine all of the handouts in a single documen
 - [Special Distributions](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_special_distributions.pdf)
 - [Central Limit Theorem](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_central_limit_theorem.pdf)
 - [Sampling, Confidence Intervals and Hypothesis Testing](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_hypothesis_testing.pdf)
-- [Bivariate Regression](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_regression.pdf)
+- [Bivariate Linear Regression](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Handouts/handout_regression.pdf)
 
 ##  Laboratories
 
-Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva. Many thanks to Victor Araújo who has made corrections and small contributions to the material.
+Authors: [Leonardo Sangali Barone](leonardo.barone@usp.br) and Patrick Silva. Many thanks to Victor Araújo who has made corrections and small contributions to the material, and to Flávio Souza, who wrote the simultaions do-file example.
 
 ### Instructions and Objective
 
@@ -114,6 +114,7 @@ We will use this dataset to replicate published research and learn a little bit 
 - [Laboratory 11 - Two way graphs and correlation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_11.md)
 - [Laboratory 12 - Generating new variables and calculating functions of variables](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_12.md)
 - [Laboratory 13 - Confidence intervals and hypothesis test](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/stata_lab_13.md)
+- [Simulations](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Labs/Simulations.do)
 
 Extra (Flávio's suggestion): [Introduction to Stata](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/introduction_to_Stata.pdf) by Andrew Q. Philips, University of Colorado Boulder and Summer School Professor
 
@@ -140,8 +141,9 @@ Extra (Flávio's suggestion): [Introduction to Stata](https://github.com/leobaro
 - [Fake Politicians from Race Discrimination Exercise - 1](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_1.pdf)
 - [Fake Politicians from Race Discrimination Exercise - 2](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/race_exp_2.pdf)
 - [Stata Coin Simulation](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/coin_simulation.do)
-- [Data of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_data.csv)
+- [Data of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_data.csv)- [Data of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/fake_data.csv)
 - [R code to build of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/simulated_dataset.R)
+- [Stata code to build of Fakeland Citizens](https://github.com/leobarone/IPSA_USP_EADA_2018/blob/master/Miscellania/Fake_Data.do
 
 ## Questions, issues and discussions in Github
 
